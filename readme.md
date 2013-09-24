@@ -21,7 +21,7 @@ This returns `true` if the element is in the viewport and `false` otherwise.
 #### Advanced usage
 
 ```javascript
-$( selector ).isInViewport({"tolerance" :100,"toleranceForLast": 401, "debug": true})
+$( selector ).isInViewport( {"tolerance" :100, "toleranceForLast": 401, "debug": true} )
 ```
 `.isInViewport()` takes three options:
 
