@@ -4,7 +4,8 @@
     "description": "An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.",
     "keywords": [
         "viewport",
-        "isInViewport"
+        "isInViewport",
+        "scroll"
     ],
     "demo": "https://github.com/zeusdeux/isInViewport/tree/master/examples",
     "version": "0.1.0",
