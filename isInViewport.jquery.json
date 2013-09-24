@@ -7,7 +7,7 @@
         "isInViewport",
         "scroll"
     ],
-    "demo": "https://github.com/zeusdeux/isInViewport/tree/master/examples",
+    "demo": "http://experiments.muditameta.com/isInViewport/",
     "version": "0.1.0",
     "author": {
         "name": "Mudit Ameta",
