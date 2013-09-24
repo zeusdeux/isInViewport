@@ -1,7 +1,7 @@
 isInViewport.js
 ================
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
-
+Did you say [demo]("http://experiments.muditameta.com/isInViewport/")?
 
 Installation
 ----------------
