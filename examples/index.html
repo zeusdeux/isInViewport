@@ -6,53 +6,57 @@
     <title>
         Test
     </title>
+    <link rel="stylesheet" href="./common.css" />
     <style>
-    body {
-        margin: 0;
-        padding: 0;
+    #header {
+        width: 960px;
+        margin: 0 auto;
+        text-align: center;
     }
-    .box {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        box-sizing: border-box;
-        background-color: grey;
-        height: 501px;
-        width: 100%;
-        border-bottom: 10px solid white;
+    #container {
+        width: 960px;
+        margin: 10% auto;
+        text-align: center;
+    }
+    #container:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .demos {
+        display: inline-block;
+        margin:0 20px;
+        height: 200px;
+        width: 300px;
+        background-color: #1F201C;
+        color: #fff;
+        text-align: center;
+        font-size: 1.5em;
+        line-height: 7.618em;
+        transition: background-color 0.12s linear;
+    }
+    .demos:hover {
+        background-color: #E6E7E2;
+        color: #151612;
+        box-shadow: 1px 1px 7px 1px #999;
+    }
+    .left {
+        float: left;
     }
     </style>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js">
-    </script>
-    <script src="../lib/isInViewport.min.js">
-    </script>
-    <script src="./main.js">
-    </script>
 </head>
 
 <body>
+    <div id="header">
+        <h1>isInViewport.js</h1>
+    </div>
     <div id="container">
-        <div class="box">
-            1
-        </div>
-        <div class="box">
-            2
-        </div>
-        <div class="box">
-            3
-        </div>
-        <div class="box">
-            4
-        </div>
-        <div class="box">
-            5
-        </div>
-        <div class="box">
-            6
-        </div>
-        <div class="box">
-            7
-        </div>
+        <a href="./basic.html" class="demos">
+            Basic demo
+        </a>
+        <a href="./advanced.html" class="demos">
+            Advanced demo
+        </a>
     </div>   
 </body>
 

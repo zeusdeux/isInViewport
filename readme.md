@@ -27,8 +27,6 @@ $( selector ).isInViewport( {"tolerance" :100, "toleranceForLast": 401, "debug":
 
 - `tolerance` specfies the upper limit in `pixels` of when the element is deemed *in viewport*.   
 It defaults to `0`.
-- `toleranceForLast` does the same as `tolerance` but for the last element within say a container of elements.   
-It defaults to `tolerance` value and `0` if `tolerance` not specified.
 - `debug` enables logging to the console.   
 It defaults to `false`.
 

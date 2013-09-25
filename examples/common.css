@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FBFBFB;
+    color: #151612;
+    font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+h1 {
+    font-size: 3em;
+}
+a, a:visited, a:active, a:hover {
+    text-decoration: none;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}

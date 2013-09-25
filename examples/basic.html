@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Basic isInViewport Example
+    </title>
+    <link rel="stylesheet" href="./common.css" />
+    <style>
+    .box {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: #C5C7BC;
+        height: 501px;
+        width: 100%;
+        margin-bottom: 2px;
+        position: relative;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+        line-height: 1.5em;
+    }
+    .first {
+        position: absolute;
+        right: 30%;
+        bottom: 30%;
+    }
+    .tolerance {
+        height: 100px;
+        width: 100%;
+        background: rgb(212, 12, 20);
+        background-color: rgba(255, 0, 0, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+        .tolerance:before, .tolerance:after {
+            content:"";
+            display: table;
+        }
+        .tolerance:after {
+            clear: both;
+        }
+    .tolerance {
+        zoom: 1;
+        /* For IE 6/7 (trigger hasLayout) */
+    }
+        .tolerance * {
+            padding: 36px;
+            color: #fff;
+        }
+    </style>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js">
+    </script>
+    <script src="../lib/isInViewport.min.js">
+    </script>
+    <script src="./basic.js">
+    </script>
+</head>
+
+<body>
+    <div class="tolerance">
+        <a href="./index.html" class="button left">Back</a>
+        <a class="right">Tolerance Area (Tolerance = 100px)</a>
+    </div>
+    <div id="container">
+        <div class="box">
+            <div class="first">
+                <p>Initially no options are passed to isInViewport().</p>
+                <p>Hence all visible div(s) are light grey coloured.</p>
+                <p>onscroll, isInViewport() is called with tolerance as 100</p>
+                <p>and debug as true for the div with class `js-hook` ie the 2nd div.</p>
+                <p>Therefore 2nd div turns light grey only when it is inside tolerance area.</p>
+            </div>
+        </div>
+        <div class="box js-hook">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+</body>
+
+</html>
