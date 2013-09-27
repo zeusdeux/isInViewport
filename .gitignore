@@ -216,3 +216,6 @@ pip-log.txt
 
 #Mine
 *.sublime-*
+node*/
+Grunt*.js
+package.json
