@@ -8,7 +8,7 @@
 		});
 		var t = $('.js-hook').text();
 		$(window).scroll(function() {
-			if($('.js-hook').isInViewport({"tolerance" :100, "debug": true}))
+			if($('.js-hook').isInViewport({"tolerance" :100}))
 				$('.js-hook').css({"background-color": "#C5C7BC", "color":"#151612"}).text("Now in viewport.");
 			else
 				$('.js-hook').css({"background-color":"#21221E", "color":"#fff"}).text(t);

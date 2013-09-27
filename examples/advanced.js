@@ -9,7 +9,7 @@
 
 		$(window).scroll(function() {
 			$('#container').children().each(function() {
-				if ( $(this).isInViewport({"tolerance": 100, "debug": true}) )
+				if ( $(this).isInViewport({"tolerance": 100}) )
 					$(this).css("background-color", "#C5C7BC");
 				else
 					$(this).css("background-color", "#21221E");
