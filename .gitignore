@@ -219,3 +219,4 @@ pip-log.txt
 node*/
 Grunt*.js
 package.json
+isInViewport_*.js
