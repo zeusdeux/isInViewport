@@ -23,7 +23,7 @@ This returns `true` if the element is in the viewport and `false` otherwise.
 ```javascript
 $( selector ).isInViewport( {"tolerance" :100, "debug": true} )
 ```
-`.isInViewport()` takes three options:
+`.isInViewport()` takes two options:
 
 - `tolerance` specfies the upper limit in `pixels` of when the element is deemed *in viewport*.   
 It defaults to `0`.
