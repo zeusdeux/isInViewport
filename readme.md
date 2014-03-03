@@ -12,14 +12,43 @@ Installation
 Usage
 ----------------
 #### Basic usage
+As of version `1.1.0`, the `in-viewport` selector is preferred way of using the plugin.   
+Syntax is as below:
+```javascript
+$( 'selector:in-viewport' )
+```
+When used as a selector it returns all the elements that match. Since it returns the element(s) it can *thus be chained* with other jQuery methods. 
 
+###### Example:
+```javascript
+$( 'div:in-viewport' ).css( 'background-color', 'red' );
+```
+This will set the `background-color` as `red` for all `divs` that are in the viewport.
+
+#### Old basic usage syntax
 ```javascript
 $( selector ).isInViewport()
 ```
 This returns `true` if the element is in the viewport and `false` otherwise.
 
 #### Advanced usage
+As of version `1.1.0`, you can use the `in-viewport` selector with the `tolerance` passed as a parameter to the selector. This removes the need to loop over a collection of elements and to test them all separately using `.isInViewport()` method. The syntax is given below:
+```javascript
+$( 'selector:in-viewport( tolerance )' )
+```
+###### Example:
+```javascript
+$( 'div:in-viewport( 100 )' ).css( 'background-color', 'red' );
+```
+This will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
 
+With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
+
+- Note that the `in-viewport` selector *does not* support the `debug` parameter.   
+- If you need to use `debug` then use the method call syntax:   
+`isInViewport( {"tolerance": 100, "debug": true} )`
+
+#### Old advanced usage syntax
 ```javascript
 $( selector ).isInViewport( {"tolerance" :100, "debug": true} )
 ```
@@ -30,14 +59,12 @@ It defaults to `0`.
 - `debug` enables logging to the console.   
 It defaults to `false`.
 
-With the advanced options it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
-
-See the example in the `examples` directory for more clarity.
+See the examples in the `examples` directory for more clarity.
 
 ## Support
 __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
 ## Note
-
-- `.isInViewport()` doesn't support chaining as it returns a `boolean` value.
+- `in-viewport` selector *does* support chaining.
+- `.isInViewport()` *doesn't* support chaining as it returns a `boolean` value.
 - To use with IE < 9 use jQuery <= 1.7.0

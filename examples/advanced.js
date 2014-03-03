@@ -1,19 +1,11 @@
 (function($) {
 	$(document).ready(function() {
-		$('#container').children().each(function() {
-			if ( $(this).isInViewport({"tolerance": 10}) )
-				$(this).css("background-color", "#C5C7BC");
-			else
-				$(this).css("background-color", "#21221E");
-		});
+		$('#container > div.box').css("background-color", "#21221E");
+		$('#container > div.box:in-viewport(10)').css("background-color", "#C5C7BC");
 
 		$(window).scroll(function() {
-			$('#container').children().each(function() {
-				if ( $(this).isInViewport({"tolerance": 100}) )
-					$(this).css("background-color", "#C5C7BC");
-				else
-					$(this).css("background-color", "#21221E");
-			});
+			$('#container > div.box').css("background-color", "#21221E");
+			$('#container > div.box:in-viewport(100)').css("background-color", "#C5C7BC");
 		});
 	});
 }(jQuery));
