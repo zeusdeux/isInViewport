@@ -22,6 +22,7 @@
     "*.sublime-*",
     "Grunt*.js",
     "package.json",
-    "isInViewport_*.js"
+    "isInViewport_*.js",
+    "*.jquery.json"
   ]
 }
