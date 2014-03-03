@@ -4,7 +4,7 @@ An ultra-light jQuery plugin that tells you if the element is in the viewport, b
 Did you say [demo](http://experiments.muditameta.com/isInViewport/)?
 
 Current version: `1.1.0`
-- Added support for `in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
+- Added support for `:in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
 
 Installation
 ----------------
@@ -15,7 +15,7 @@ Installation
 Usage
 ----------------
 #### Basic usage
-As of version `1.1.0`, the `in-viewport` selector is preferred way of using the plugin.   
+As of version `1.1.0`, the `:in-viewport` selector is preferred way of using the plugin.   
 Syntax is as below:
 ```javascript
 $( 'selector:in-viewport' )
@@ -35,7 +35,7 @@ $( selector ).isInViewport()
 This returns `true` if the element is in the viewport and `false` otherwise.
 
 #### Advanced usage
-As of version `1.1.0`, you can use the `in-viewport` selector with the `tolerance` passed as a parameter to the selector. This removes the need to loop over a collection of elements and to test them all separately using `.isInViewport()` method. The syntax is given below:
+As of version `1.1.0`, you can use the `:in-viewport` selector with the `tolerance` passed as a parameter to the selector. This removes the need to loop over a collection of elements and to test them all separately using `.isInViewport()` method. The syntax is given below:
 ```javascript
 $( 'selector:in-viewport( tolerance )' )
 ```
@@ -47,7 +47,7 @@ This will set the `background-color` as `red` for all `divs` that are in the vie
 
 With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
 
-- Note that the `in-viewport` selector *does not* support the `debug` parameter.   
+- Note that the `:in-viewport` selector *does not* support the `debug` parameter.   
 - If you need to use `debug` then use the method call syntax:   
 `isInViewport( {"tolerance": 100, "debug": true} )`
 
@@ -68,6 +68,6 @@ See the examples in the `examples` directory for more clarity.
 __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
 ## Note
-- `in-viewport` selector *does* support chaining.
+- `:in-viewport` selector *does* support chaining.
 - `.isInViewport()` *doesn't* support chaining as it returns a `boolean` value.
 - To use with IE < 9 use jQuery <= 1.7.0
