@@ -8,7 +8,7 @@ Current version: `1.1.0`
 
 Installation
 ----------------
-- Download either `isInViewport.js` or `isInViewport.min.js`  
+- Download either `isInViewport.js` or `isInViewport.min.js` ( or `bower install isInViewport` )
 - Add it after you include `jQuery`
 - You're ready to go!
 
