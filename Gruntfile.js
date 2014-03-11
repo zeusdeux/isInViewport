@@ -2,8 +2,11 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
-			option: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+			options: {
+				banner: '/*\n' +
+					' * @author  Mudit Ameta\n' +
+					' * @license https://github.com/zeusdeux/isInViewport/blob/master/license.md MIT\n' +
+					' */\n'
 			},
 			dist: {
 				files: {
