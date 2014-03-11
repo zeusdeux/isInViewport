@@ -217,6 +217,4 @@ pip-log.txt
 #Mine
 *.sublime-*
 node*/
-Grunt*.js
-package.json
 isInViewport_*.js
