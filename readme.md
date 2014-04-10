@@ -69,6 +69,24 @@ It defaults to `false`.
 
 See the examples in the `examples` directory for more clarity.
 
+#### Advanced usage with callback
+```javascript
+$( selector ).isInViewport({tolerance: 100, debug: true}, function(inViewport){
+  if( inViewport ){
+    /* do something */
+  }
+})
+```
+`.isInViewport()` accepts multiple params:
+- `Object`
+-- `tolerance` specfies the upper limit in `pixels` of when the element is deemed *in viewport*. It defaults to `0`.
+-- `debug` enables logging to the console. It defaults to `false`.
+
+- `Function`
+-- `callback` will be applied to an element or a collection of elements. Passes a boolean argument to the callback function.
+
+See the examples in the `examples` directory for more clarity.
+
 ## Support
 __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
