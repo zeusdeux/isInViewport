@@ -18,10 +18,13 @@
         width: 100%;
         margin-bottom: 2px;
     }
+    .box.last {
+        color: #C5C7BC;
+    }
     .tolerance {
         height: 100px;
         width: 100%;
-        background: rgb(212, 12, 20);
+        background-color: rgb(212, 12, 20);
         background-color: rgba(255, 0, 0, 0.4);
         position: fixed;
         top: 0;
@@ -91,8 +94,8 @@
         <div class="box">
             6
         </div>
-        <div class="box">
-            7
+        <div class="box last">
+            This div will never be in the viewport.
         </div>
     </div>
 </body>
