@@ -18,6 +18,8 @@ prerogative to do what he/she wants when their page is scrolled to *end of page*
 
 Previous version: `1.1.1`
 - Added `bower` support.
+
+Previous version: `1.1.0`
 - Added support for `:in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
 
 Installation
