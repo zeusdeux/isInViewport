@@ -5,7 +5,8 @@ Did you say [demo](http://experiments.muditameta.com/isInViewport/)?
 
 Current version: `1.1.1`
 - Added `bower` support.
-- The "end of page" logic is going to be removed in the next version from the plugin as it should be specific to your application
+- The "end of page" logic is going to be removed in the next version from the plugin as it should be specific to your application.
+- The old usage syntax i.e., `$( selector ).isInViewport( options )` is deprecated and will be removed in version `2.0.0`.
 
 Previous version: `1.1.0`
 - Added support for `:in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
