@@ -64,8 +64,7 @@ $('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', 
                                                       .text( 'in viewport' );
 ```
 __Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
-__Example 2__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom   
-viewport given by `#viewport` and with a `tolerance` of `100px`.
+__Example 2__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom viewport given by `#viewport` and with a `tolerance` of `100px`.
 
 With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
 
