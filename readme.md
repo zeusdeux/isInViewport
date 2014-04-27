@@ -56,11 +56,16 @@ When a custom viewport is *not* specified, it defaults to *window* as the viewpo
 
 ###### Example:
 ```javascript
+//example 1
 $( 'div:in-viewport( 100 )' ).css( 'background-color', 'red' );
-$('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', '#C5C7BC' )
+
+//example 2
+$('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', 'blue' )
                                                       .text( 'in viewport' );
 ```
-This will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
+__Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
+__Example 2__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom   
+viewport given by `#viewport` and with a `tolerance` of `100px`.
 
 With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
 
