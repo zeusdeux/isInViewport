@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced-viewport usage example</title>
+  <link rel="stylesheet" href="./common.css" />
+  <style>
+  #container {
+    width: 100%;
+  }
+  #innerContainer {
+    width: 400px;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+  }
+  #viewport {
+    height: 500px;
+    margin: 0;
+    overflow: auto;
+  }
+  .box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #C5C7BC;
+    height: 300px;
+    width: 100%;
+    margin: 0 auto 2px auto;
+    padding: 120px;
+    text-align: center;
+  }
+  .box.outOfViewport {
+    position: relative;
+    left: -383px;
+  }
+  .tolerance {
+    height: 100px;
+    width: 383px;
+    background-color: rgb(212, 12, 20);
+    background-color: rgba(255, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  </style>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js">
+  </script>
+  <script src="../lib/isInViewport.min.js">
+  </script>
+  <script src="./advanced-viewport.js">
+  </script>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33892300-1']);
+  _gaq.push(['_setDomainName', 'muditameta.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="innerContainer">
+      <div id="viewport">
+        <div class="tolerance">
+          <a href="./index.html" class="button left">Back</a>
+          <a class="right">Tolerance Area (Tolerance = 100px)</a>
+        </div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box outOfViewport">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
