@@ -23,6 +23,7 @@
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-contrib-uglify": "0.2.x",
-    "grunt-contrib-jshint": "~0.8.0"
+    "grunt-contrib-jshint": "~0.8.0",
+    "should": "^3.3.1"
   }
 }
