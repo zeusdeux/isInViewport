@@ -47,14 +47,17 @@ This will set the `background-color` as `red` for all `divs` that are in the vie
 #### Advanced usage
 
 ```javascript
-$( 'selector:in-viewport( tolerance )' )
+$( 'selector:in-viewport( tolerance[, viewport selector] )' )
 ```
 This returns all the elements that are in the viewport while taking into account the `tolerance` criterion.   
-Since it returns the element(s) it can *thus be chained* with other jQuery methods. 
+Since it returns the element(s) it can *thus be chained* with other jQuery methods.   
+When a custom viewport is specified, it uses that to calculate if the element is in *that* viewport or not.   
+When a custom viewport is *not* specified, it defaults to *window* as the viewport.
 
 ###### Example:
 ```javascript
 $( 'div:in-viewport( 100 )' ).css( 'background-color', 'red' );
+$('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', '#C5C7BC' ).text( 'in viewport' );
 ```
 This will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
 
