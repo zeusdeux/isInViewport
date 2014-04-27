@@ -22,3 +22,4 @@ $RECYCLE.BIN/
 *.sublime-*
 node*/
 isInViewport_*.js
+.gitattributes
