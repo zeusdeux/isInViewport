@@ -28,6 +28,7 @@
     "phantomjs": "^1.9.7-4",
     "mocha-phantomjs": "^3.3.2",
     "mocha": "^1.18.2",
-    "grunt-mocha-phantomjs": "^0.4.3"
+    "grunt-mocha-phantomjs": "^0.4.3",
+    "grunt-cli": "^0.1.13"
   }
 }
