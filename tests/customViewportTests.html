@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>isInViewport: Default viewport tests</title>
+  <link rel="stylesheet" href="./lib/mocha.css" />
+  <style>
+    #container {
+      width: 100%;
+    }
+    #viewport {
+      width: 400px;
+      height: 500px;
+      margin: 0;
+      overflow: auto;
+    }
+    .box {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color: #C5C7BC;
+      height: 200px;
+      width: 100%;
+      margin-bottom: 2px;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mocha"></div>
+  <script src="./lib/jquery.min.js"></script>
+  <script src="../lib/isInViewport.min.js"></script>
+  <script src="./lib/should.min.js"></script>
+  <script src="./lib/mocha.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+  </script>
+  <script src="customViewportTests.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    if (window.mochaPhantomJS) {
+      mochaPhantomJS.run();
+    }
+    else {
+      mocha.run();
+    }
+  </script>
+</body>
+
+</html>

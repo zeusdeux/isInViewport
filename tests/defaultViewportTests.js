@@ -3,14 +3,19 @@ function runIsInViewport(tol) {
   $('#container > div.box:in-viewport(' + tol + ')').css('background-color', '#C5C7BC').text('in viewport');
 }
 
-runIsInViewport(100);
-
 describe('isInViewport', function() {
   describe('viewport is window', function() {
-    var div = $('.box');
+    var div;
 
     after(function() {
       $('#container').remove();
+    });
+
+    before(function() {
+      var html = '<div id="container"><div class="box">1</div></div>';
+      $('body').prepend(html);
+      runIsInViewport(100);
+      div = $('.box');
     });
 
     function top(x, tol) {
@@ -83,8 +88,8 @@ describe('isInViewport', function() {
           top(-1, 0);
           div.text().should.be.exactly('in viewport');
         });
-        it('should return the text from div as "out of viewport" when div bottom < 0',function(){
-          top(-201,0);
+        it('should return the text from div as "out of viewport" when div bottom < 0', function() {
+          top(-201, 0);
           div.text().should.be.exactly('out of viewport');
         });
         it('should return the text from div as "out of viewport" when div top > viewport height', function() {
