@@ -6,16 +6,17 @@ function runIsInViewport(tol) {
 describe('isInViewport', function() {
   describe('viewport is div#viewport', function() {
     var div;
-
-    after(function() {
-      $('#container').remove();
-    });
+    var viewport = '#viewport';
 
     before(function() {
       var html = '<div id="container"><div id="viewport"><div class="box">1</div></div></div>';
       $('body').prepend(html);
       runIsInViewport(100);
       div = $('.box');
+    });
+
+    after(function() {
+      $('#container').remove();
     });
 
     function top(x, tol) {
@@ -139,6 +140,13 @@ describe('isInViewport', function() {
         });
       });
     });
-
+    
+    describe('when tolerance is -100', function(){
+      it('should be window.height - abs(tolerance)',function(){
+        var viewportHt = $(viewport).height();
+        top(viewportHt-100, -100);
+        div.text().should.be.exactly('in viewport');
+      });
+    });
   });
 });

@@ -7,15 +7,15 @@ describe('isInViewport', function() {
   describe('viewport is window', function() {
     var div;
 
-    after(function() {
-      $('#container').remove();
-    });
-
     before(function() {
       var html = '<div id="container"><div class="box">1</div></div>';
       $('body').prepend(html);
       runIsInViewport(100);
       div = $('.box');
+    });
+
+    after(function() {
+      $('#container').remove();
     });
 
     function top(x, tol) {
@@ -30,7 +30,7 @@ describe('isInViewport', function() {
       runIsInViewport(tol);
     }
 
-    describe('tolerance is 100', function() {
+    describe('when tolerance is 100', function() {
       describe('div location vertically in viewport', function() {
         describe('when bottom of div is outside tolerance region while top is inside', function() {
           it('should return the text from div as "in viewport"', function() {
@@ -63,8 +63,6 @@ describe('isInViewport', function() {
         });
       });
 
-
-
       describe('div location horizontally in viewport', function() {
         describe('when left is greater than viewport width', function() {
           it('should return the text from div as "out of viewport"', function() {
@@ -89,7 +87,7 @@ describe('isInViewport', function() {
       });
     });
 
-    describe('tolerance is 0', function() {
+    describe('when tolerance is 0', function() {
       describe('div location vertically in viewport', function() {
         describe('when div top is 0', function() {
           it('should return the text from div as "in viewport"', function() {
@@ -139,6 +137,14 @@ describe('isInViewport', function() {
             left(0, 0);
           });
         });
+      });
+    });
+
+    describe('when tolerance is -100', function(){
+      it('should be window.height - abs(tolerance)',function(){
+        var winHt = $(window).height();
+        top(winHt-100, -100);
+        div.text().should.be.exactly('in viewport');
       });
     });
   });
