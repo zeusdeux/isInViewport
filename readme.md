@@ -67,15 +67,16 @@ $( 'div:in-viewport( 100 )' ).css( 'background-color', 'red' );
 
 //example 2
 //the height of tolerance region is (viewport.height - 100px) from top of viewport
-$( 'div:in-viewport( -100 )' ).css( 'background-color', 'red' );
+$( 'div:in-viewport( -100 )' ).css( 'background-color', 'green' );
 
 //example 2
 $('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', 'blue' )
                                                       .text( 'in viewport' );
 ```
 __Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
-__Example 2__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `viewport height - 100px`.   
-This lets the user conveniently provide a `tolerance` value closer to the viewport height without having to call `$(viewport).height()` all the time.   
+
+__Example 2__ will set the `background-color` as `green` for all `divs` that are in the viewport with a `tolerance` of `viewport height - 100px`. This lets the user conveniently provide a `tolerance` value closer to the viewport height without having to call `$(viewport).height()` all the time.   
+
 __Example 3__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom viewport given by `#viewport` and with a `tolerance` of `100px`.
 
 With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
