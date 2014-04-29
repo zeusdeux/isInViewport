@@ -9,6 +9,11 @@
   #container {
     width: 100%;
   }
+  #container p {
+    margin:0 auto;
+    width: 400px;
+    text-align: center;
+  }
   #innerContainer {
     width: 400px;
     height: 500px;
@@ -45,6 +50,21 @@
     top: 0;
     left: 0;
     z-index: 1;
+  }
+  .tolerance:before, .tolerance:after {
+    content:"";
+    display: table;
+  }
+  .tolerance:after {
+    clear: both;
+  }
+  .tolerance {
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */
+  }
+  .tolerance * {
+    padding: 10px;
+    color: #fff;
   }
   </style>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js">
@@ -87,6 +107,7 @@
         <div class="box">7</div>
       </div>
     </div>
+    <p>Where's the 4th div? Inspect it using the developer's console or firebug. :)</p>
   </div>
 
 </body>
