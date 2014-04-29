@@ -55,8 +55,9 @@ $( 'selector:in-viewport( tolerance[, viewport selector] )' )
 ```
 This returns all the elements that are in the viewport while taking into account the `tolerance` criterion.   
 Since it returns the element(s) it can *thus be chained* with other jQuery methods.   
-When a custom viewport is specified, it uses that to calculate if the element is in *that* viewport or not.   
-When a custom viewport is *not* specified, it defaults to *window* as the viewport.
+When a viewport selector is specified, it uses that to calculate if the element is in *that* viewport or not.   
+When a viewport selector is *not* specified, it defaults to *window* as the viewport.   
+The viewport selector is any valid jQuery selector.
 
 ###### Defaults:
 - `tolerance` defaults to `0`
