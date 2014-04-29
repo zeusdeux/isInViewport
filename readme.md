@@ -83,7 +83,7 @@ With the advanced usage it becomes very easy to build things like menus with ite
 See the examples in the `examples` directory for more clarity.
 
 ###### Note:  
-- When `tolerance` is `0` it is actually *equal to* `tolerance: $(viewport).height()` and *not* `0`.   
+- When `tolerance` is `0` or `undefined` it is actually *equal to* `tolerance: $(viewport).height()` and *not* `0`.   
 This makes it easier for developers to have the whole `viewport` available to them as a valid `viewport`.
 
 ## Support
