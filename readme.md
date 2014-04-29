@@ -4,7 +4,9 @@ isInViewport.js
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
 Did you say [demo](http://experiments.muditameta.com/isInViewport/)?
 
-Current version: `2.0.0-alpha`
+Current version: `2.0.0`
+- Added support for negative `tolerance` values that are now relative to the `viewport` height
+- Added support for custom viewport selector (see [Advanced usage](#advanced-usage))
 - Removed support for the old usage syntax in favour of the `:in-viewport` selector i.e.,
 ```javascript
 //removed
@@ -32,6 +34,7 @@ Installation
 
 Usage
 ----------------
+<a name="bu"/>
 #### Basic usage
 
 ```javascript
