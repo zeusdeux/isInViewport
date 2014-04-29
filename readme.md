@@ -55,21 +55,36 @@ Since it returns the element(s) it can *thus be chained* with other jQuery metho
 When a custom viewport is specified, it uses that to calculate if the element is in *that* viewport or not.   
 When a custom viewport is *not* specified, it defaults to *window* as the viewport.
 
+###### Defaults:
+- `tolerance` defaults to `0`
+- `viewport` defaults to `window`
+
 ###### Example:
 ```javascript
 //example 1
+//the height of tolerance region is 100px from top of viewport
 $( 'div:in-viewport( 100 )' ).css( 'background-color', 'red' );
+
+//example 2
+//the height of tolerance region is (viewport.height - 100px) from top of viewport
+$( 'div:in-viewport( -100 )' ).css( 'background-color', 'red' );
 
 //example 2
 $('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', 'blue' )
                                                       .text( 'in viewport' );
 ```
 __Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
-__Example 2__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom viewport given by `#viewport` and with a `tolerance` of `100px`.
+__Example 2__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `viewport height - 100px`.   
+This lets the user conveniently provide a `tolerance` value closer to the viewport height without having to call `$(viewport).height()` all the time.   
+__Example 3__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom viewport given by `#viewport` and with a `tolerance` of `100px`.
 
 With the advanced usage it becomes very easy to build things like menus with items that get auto-highlighted based on which section you are on, transition effects when an element comes into the viewport, etc.
 
 See the examples in the `examples` directory for more clarity.
+
+###### Note:  
+- When `tolerance` is `0` it is actually *equal to* `tolerance: $(viewport).height()` and *not* `0`.   
+This makes it easier for developers to have the whole `viewport` available to them as a valid `viewport`.
 
 ## Support
 __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
