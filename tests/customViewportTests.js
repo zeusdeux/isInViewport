@@ -32,88 +32,110 @@ describe('isInViewport', function() {
 
     describe('tolerance is 100', function() {
       describe('div location vertically in viewport', function() {
-        it('should return the text from div as "in viewport" when bottom of div is outside tolerance region while top is inside', function() {
-          div.text().should.be.exactly('in viewport');
+        describe('when bottom of div is outside tolerance region while top is inside', function() {
+          it('should return the text from div as "in viewport"', function() {
+            div.text().should.be.exactly('in viewport');
+          });
         });
-
-        it('should return the text from div as "in viewport" when bottom of div is equal to tolerance ie it\'s on the edge of tolerance region', function() {
-          top(-100, 100);
-          div.text().should.be.exactly('in viewport');
+        describe('when bottom of div is equal to tolerance ie it\'s on the edge of tolerance region', function() {
+          it('should return the text from div as "in viewport"', function() {
+            top(-100, 100);
+            div.text().should.be.exactly('in viewport');
+          });
         });
-
-        it('should return the text from div as "out of viewport" when bottom of div is inside tolerance region', function() {
-          top(-150, 100);
-          div.text().should.be.exactly('out of viewport');
+        describe('when bottom of div is inside tolerance region', function() {
+          it('should return the text from div as "out of viewport"', function() {
+            top(-150, 100);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-
-        it('should return the text from div as "out of viewport" when top of div is equal to tolerance ie it\'s on the edge of tolerance region', function() {
-          top(100, 100);
-          div.text().should.be.exactly('out of viewport');
+        describe('when top of div is equal to tolerance ie it\'s on the edge of tolerance region', function() {
+          it('should return the text from div as "in viewport"', function() {
+            top(100, 100);
+            div.text().should.be.exactly('in viewport');
+          });
         });
-
-        it('should return the text from div as "out of viewport" when top of div is outside tolerance region', function() {
-          top(101, 100);
-          div.text().should.be.exactly('out of viewport');
+        describe('when top of div is outside tolerance region', function() {
+          it('should return the text from div as "out of viewport"', function() {
+            top(101, 100);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
       });
 
       describe('div location horizontally in viewport', function() {
-        it('should return the text from div as "out of viewport" when left is greater than viewport width', function() {
-          top(0, 100);
-          left(99999, 100);
-          div.text().should.be.exactly('out of viewport');
+        describe('when left is greater than viewport width', function() {
+          it('should return the text from div as "out of viewport"', function() {
+            top(0, 100);
+            left(99999, 100);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-
-        it('should return the text from div as "out of viewport" when left is greater than viewport left edge', function() {
-          left(-99999, 100);
-          div.text().should.be.exactly('out of viewport');
+        describe('when left is greater than viewport left edge', function() {
+          it('should return the text from div as "out of viewport"', function() {
+            left(-99999, 100);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-
-        it('should return the text from div as "in viewport" when left is lesser than viewport width', function() {
-          left(90, 100);
-          div.text().should.be.exactly('in viewport');
-          left(0, 100);
+        describe('when left is lesser than viewport width', function() {
+          it('should return the text from div as "in viewport"', function() {
+            left(90, 100);
+            div.text().should.be.exactly('in viewport');
+            left(0, 100);
+          });
         });
       });
     });
 
     describe('tolerance is 0', function() {
       describe('div location vertically in viewport', function() {
-        it('should return the text from div as "in viewport" when div top is 0', function() {
-          top(0, 0);
-          left(0, 0);
-          div.text().should.be.exactly('in viewport');
+        describe('when', function() {
+          it('should return the text from div as "in viewport" when div top is 0', function() {
+            top(0, 0);
+            left(0, 0);
+            div.text().should.be.exactly('in viewport');
+          });
         });
-        it('should return the text from div as "in viewport" when div top < 0 but bottom > 0', function() {
-          top(-1, 0);
-          div.text().should.be.exactly('in viewport');
+        describe('when', function() {
+          it('should return the text from div as "in viewport" when div top < 0 but bottom > 0', function() {
+            top(-1, 0);
+            div.text().should.be.exactly('in viewport');
+          });
         });
-        it('should return the text from div as "out of viewport" when div bottom < 0', function() {
-          top(-201, 0);
-          div.text().should.be.exactly('out of viewport');
+        describe('when', function() {
+          it('should return the text from div as "out of viewport" when div bottom < 0', function() {
+            top(-201, 0);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-        it('should return the text from div as "out of viewport" when div top > viewport height', function() {
-          top(99999, 0);
-          div.text().should.be.exactly('out of viewport');
+        describe('when', function() {
+          it('should return the text from div as "out of viewport" when div top > viewport height', function() {
+            top(99999, 0);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
       });
 
       describe('div location horizontally in viewport', function() {
-        it('should return the text from div as "out of viewport" when left is greater than viewport width', function() {
-          top(0, 0);
-          left(99999, 0);
-          div.text().should.be.exactly('out of viewport');
+        describe('when', function() {
+          it('should return the text from div as "out of viewport" when left is greater than viewport width', function() {
+            top(0, 0);
+            left(99999, 0);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-
-        it('should return the text from div as "out of viewport" when left is greater than viewport left edge', function() {
-          left(-99999, 0);
-          div.text().should.be.exactly('out of viewport');
+        describe('when', function() {
+          it('should return the text from div as "out of viewport" when left is greater than viewport left edge', function() {
+            left(-99999, 0);
+            div.text().should.be.exactly('out of viewport');
+          });
         });
-
-        it('should return the text from div as "in viewport" when left is lesser than viewport width', function() {
-          left(90, 0);
-          div.text().should.be.exactly('in viewport');
-          left(0, 0);
+        describe('when', function() {
+          it('should return the text from div as "in viewport" when left is lesser than viewport width', function() {
+            left(90, 0);
+            div.text().should.be.exactly('in viewport');
+            left(0, 0);
+          });
         });
       });
     });
