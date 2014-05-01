@@ -140,10 +140,10 @@ describe('isInViewport', function() {
       });
     });
 
-    describe('when tolerance is -100', function(){
-      it('should be window.height - abs(tolerance)',function(){
+    describe('when tolerance is -100', function() {
+      it('should be window.height - abs(tolerance)', function() {
         var winHt = $(window).height();
-        top(winHt-100, -100);
+        top(winHt - 100, -100);
         div.text().should.be.exactly('in viewport');
       });
     });
