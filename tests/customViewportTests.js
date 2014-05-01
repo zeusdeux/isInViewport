@@ -1,6 +1,9 @@
 function runIsInViewport(tol) {
   $('#viewport > div.box').css('background-color', '#21221E').text('out of viewport');
-  $('#viewport > div.box:in-viewport(' + tol + ', #viewport)').css('background-color', '#C5C7BC').text('in viewport');
+  if (typeof tol !== 'undefined')
+    $('#viewport > div.box:in-viewport(' + tol + ', #viewport)').css('background-color', '#C5C7BC').text('in viewport');
+  else
+    $('#viewport > div.box:in-viewport(#viewport)').css('background-color', '#C5C7BC').text('in viewport');
 }
 
 describe('isInViewport', function() {
@@ -90,27 +93,27 @@ describe('isInViewport', function() {
 
     describe('tolerance is 0', function() {
       describe('div location vertically in viewport', function() {
-        describe('when', function() {
-          it('should return the text from div as "in viewport" when div top is 0', function() {
+        describe('when div top is 0', function() {
+          it('should return the text from div as "in viewport"', function() {
             top(0, 0);
             left(0, 0);
             div.text().should.be.exactly('in viewport');
           });
         });
-        describe('when', function() {
-          it('should return the text from div as "in viewport" when div top < 0 but bottom > 0', function() {
+        describe('when div top < 0 but bottom > 0', function() {
+          it('should return the text from div as "in viewport"', function() {
             top(-1, 0);
             div.text().should.be.exactly('in viewport');
           });
         });
-        describe('when', function() {
-          it('should return the text from div as "out of viewport" when div bottom < 0', function() {
+        describe('when div bottom < 0', function() {
+          it('should return the text from div as "out of viewport"', function() {
             top(-201, 0);
             div.text().should.be.exactly('out of viewport');
           });
         });
-        describe('when', function() {
-          it('should return the text from div as "out of viewport" when div top > viewport height', function() {
+        describe('when div top > viewport height', function() {
+          it('should return the text from div as "out of viewport"', function() {
             top(99999, 0);
             div.text().should.be.exactly('out of viewport');
           });
@@ -118,21 +121,21 @@ describe('isInViewport', function() {
       });
 
       describe('div location horizontally in viewport', function() {
-        describe('when', function() {
-          it('should return the text from div as "out of viewport" when left is greater than viewport width', function() {
+        describe('when left is greater than viewport width', function() {
+          it('should return the text from div as "out of viewport"', function() {
             top(0, 0);
             left(99999, 0);
             div.text().should.be.exactly('out of viewport');
           });
         });
-        describe('when', function() {
-          it('should return the text from div as "out of viewport" when left is greater than viewport left edge', function() {
+        describe('when left is greater than viewport left edge', function() {
+          it('should return the text from div as "out of viewport"', function() {
             left(-99999, 0);
             div.text().should.be.exactly('out of viewport');
           });
         });
-        describe('when', function() {
-          it('should return the text from div as "in viewport" when left is lesser than viewport width', function() {
+        describe('when left is lesser than viewport width', function() {
+          it('should return the text from div as "in viewport"', function() {
             left(90, 0);
             div.text().should.be.exactly('in viewport');
             left(0, 0);
@@ -146,6 +149,18 @@ describe('isInViewport', function() {
         var viewportHt = $(viewport).height();
         top(viewportHt-100, -100);
         div.text().should.be.exactly('in viewport');
+      });
+    });
+
+    describe('when tolerance is undefined', function(){
+      describe('when viewport is specified', function (){
+        describe('when div is inside viewport',function(){
+          it('should return the text from div as "in viewport"', function() {
+            left(0);
+            top(0);
+            div.text().should.be.exactly('in viewport');
+          });
+        });
       });
     });
   });
