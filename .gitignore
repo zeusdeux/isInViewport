@@ -23,3 +23,4 @@ $RECYCLE.BIN/
 node*/
 isInViewport_*.js
 .gitattributes
+*.log
