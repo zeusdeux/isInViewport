@@ -15,7 +15,8 @@ module.exports = function(grunt) {
       src: [
         'Gruntfile.js',
         'lib/isInViewport.js',
-        'examples/*.js'
+        'examples/*.js',
+        'tests/*.js'
       ],
       options: {
         eqeqeq: true,
@@ -27,7 +28,13 @@ module.exports = function(grunt) {
         quotmark: 'single',
         undef: true,
         unused: true,
-        globals: {},
+        globals: {
+          'describe': true,
+          'should': true,
+          'it':true,
+          'before': true,
+          'after': true
+        },
         trailing: true,
         browser: true,
         devel: true,
