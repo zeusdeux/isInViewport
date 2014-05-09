@@ -6,17 +6,19 @@ function runIsInViewport(tol) {
 describe('isInViewport', function() {
   describe('viewport is window', function() {
     var div;
-
-    before(function() {
+    var addContainer = function() {
       var html = '<div id="container"><div class="box">1</div></div>';
       $('body').prepend(html);
       runIsInViewport(100);
       div = $('.box');
-    });
-
-    after(function() {
+    };
+    var removeContainer = function() {
       $('#container').remove();
-    });
+    };
+
+    before(addContainer);
+
+    after(removeContainer);
 
     function top(x, tol) {
       div.css('top', '0');
@@ -114,11 +116,40 @@ describe('isInViewport', function() {
             div.text().should.be.exactly('out of viewport');
           });
         });
+        describe('when both divs are in viewport', function() {
+          describe('when an two arbitrary functions are chained using .do', function() {
+            describe('when the first fn changes inner text to done and second adds a class name given by inner text', function() {
+              it('should have added a class named "donedone" to both divs', function() {
+                removeContainer();
+                var html = '<div id="container"><div class="box">1</div><div class="box">2</div></div>';
+                $('body').prepend(html);
+                var divs = $('div.box:in-viewport');
+                var count = 0;
+                divs.should.have.length(2, 'length isn\'t 2');
+                divs.do(function() {
+                  this.text('done');
+                }).do(function() {
+                  //this.text() returns 'donedone' and not just 'done' as
+                  //'this' is not a single div but a jquery collection 
+                  //given by $('div.box:in-viewport')
+                  this.addClass(this.text());
+                });
+                $.each(divs, function(i, v) {
+                  if ($(v).hasClass('donedone'))
+                    count++;
+                });
+                count.should.be.exactly(2, 'both divs don\'t have "done" class');
+              });
+            });
+          });
+        });
       });
 
       describe('div location horizontally in viewport', function() {
         describe('when left is greater than viewport width', function() {
           it('should return the text from div as "out of viewport"', function() {
+            removeContainer();
+            addContainer();
             top(0, 0);
             left(99999, 0);
             div.text().should.be.exactly('out of viewport');
