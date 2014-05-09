@@ -43,7 +43,10 @@ module.exports = function(grunt) {
       }
     },
     mocha_phantomjs: {
-      src: ['tests/*.html']
+      src: ['tests/*.html'],
+      options: {
+        reporter: 'dot'
+      }
     }
   });
 
