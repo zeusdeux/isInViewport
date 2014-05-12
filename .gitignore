@@ -24,3 +24,4 @@ node*/
 isInViewport_*.js
 .gitattributes
 *.log
+/**/*.dmp

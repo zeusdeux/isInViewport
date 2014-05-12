@@ -119,7 +119,7 @@ describe('isInViewport', function() {
         describe('when both divs are in viewport', function() {
           describe('when an two arbitrary functions are chained using .do', function() {
             describe('when the first fn changes inner text to done and second adds a class name given by inner text', function() {
-              it('should have added a class named "donedone" to both divs', function() {
+              it('should have added a class named "done" to both divs', function() {
                 removeContainer();
                 var html = '<div id="container"><div class="box">1</div><div class="box">2</div></div>';
                 $('body').prepend(html);
@@ -129,17 +129,48 @@ describe('isInViewport', function() {
                 divs.do(function() {
                   this.text('done');
                 }).do(function() {
-                  //this.text() returns 'donedone' and not just 'done' as
-                  //'this' is not a single div but a jquery collection 
-                  //given by $('div.box:in-viewport')
+                  //value of this is a normal html node and not a jQuery object 
+                  //hence it is being converted to a jQuery object here
                   this.addClass(this.text());
                 });
                 $.each(divs, function(i, v) {
-                  if ($(v).hasClass('donedone'))
+                  if ($(v).hasClass('done'))
                     count++;
                 });
                 count.should.be.exactly(2, 'both divs don\'t have "done" class');
               });
+            });
+          });
+          describe('when values other than an array or functions are passed to .do', function() {
+            it('should throw an error', function() {
+              var divs = $('div.box:in-viewport');
+              var faultyArray = [1, "test",
+                function() {
+                  console.log(this);
+                }
+              ];
+              try {
+                divs.do(faultyArray);
+                divs.do("boooop");
+              }
+              catch (e) {
+                e.message.should.be.exactly('isInViewport: Argument(s) passed to .do should be a function or an array of functions');
+              }
+            });
+          });
+          describe('when an array of functions is passed to .do', function() {
+            it('should execute all of the functions', function() {
+              var divs = $('div.box:in-viewport');
+              var temp = 0;
+              var fnArray = [];
+              for (var i = 0; i < 4; i++) {
+                fnArray.push(function() {
+                  return ++temp;
+                });
+              }
+              divs.should.have.length(2, 'length isn\'t 2');
+              divs.do(fnArray);
+              temp.should.be.exactly(8, 'all four functions did not execute');
             });
           });
         });
