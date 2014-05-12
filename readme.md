@@ -18,8 +18,8 @@ $( 'div:in-viewport' )
 var fnArray = [
                 function(){ console.log("Fn 1: %o", this); }, 
                 function(){ console.log("Fn 2: %o", this); }
-                //or say another function that maybe adds  elements to be tracked
-                //when in viewport
+                //or say another function that maybe adds 
+                //elements to be tracked when in viewport
               ];
 $( 'div:in-viewport' ).do(fnArray);
 ``` 
