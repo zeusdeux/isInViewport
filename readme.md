@@ -15,7 +15,10 @@ $( 'div:in-viewport' )
   .css( 'background-color', 'red' );
 
 //usage 2: pass an array of functions in
-var fnArray = [function(){ console.log("Fn 1: %o", this); }, function(){ console.log("Fn 2: %o", this); }];
+var fnArray = [
+                function(){ console.log("Fn 1: %o", this); }, 
+                function(){ console.log("Fn 2: %o", this); }
+              ];
 $( 'div:in-viewport' ).do(fnArray);
 ``` 
 
