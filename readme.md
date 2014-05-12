@@ -5,13 +5,18 @@ An ultra-light jQuery plugin that tells you if the element is in the viewport, b
 Did you say [demo](http://experiments.muditameta.com/isInViewport/)?
 
 Current version: `2.1.0`   
-- Added a `.do` method that lets the user chain any arbitrary function. Example:
+- Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
 ```javascript
+//usage 1: pass a function in
 $( 'div:in-viewport' )
   .do(function(){
     console.log( this ); //will log the jQuery collection returned by `$( 'div:in-viewport' )`
   })
   .css( 'background-color', 'red' );
+
+//usage 2: pass an array of functions in
+var fnArray = [function(){ console.log("Fn 1: %o", this); }, function(){ console.log("Fn 2: %o", this); }];
+$( 'div:in-viewport' ).do(fnArray);
 ``` 
 
 Previous version: `2.0.0`
