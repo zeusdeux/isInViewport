@@ -144,14 +144,14 @@ describe('isInViewport', function() {
           describe('when values other than an array or functions are passed to .do', function() {
             it('should throw an error', function() {
               var divs = $('div.box:in-viewport');
-              var faultyArray = [1, "test",
+              var faultyArray = [1, 'test',
                 function() {
                   console.log(this);
                 }
               ];
               try {
                 divs.do(faultyArray);
-                divs.do("boooop");
+                divs.do('boooop');
               }
               catch (e) {
                 e.message.should.be.exactly('isInViewport: Argument(s) passed to .do should be a function or an array of functions');
@@ -163,10 +163,11 @@ describe('isInViewport', function() {
               var divs = $('div.box:in-viewport');
               var temp = 0;
               var fnArray = [];
+              var tempFn = function() {
+                return ++temp;
+              };
               for (var i = 0; i < 4; i++) {
-                fnArray.push(function() {
-                  return ++temp;
-                });
+                fnArray.push(tempFn);
               }
               divs.should.have.length(2, 'length isn\'t 2');
               divs.do(fnArray);
