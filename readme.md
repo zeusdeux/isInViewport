@@ -10,7 +10,7 @@ Current version: `2.1.0`
 //usage 1: pass a function in
 $( 'div:in-viewport' )
   .do(function(){
-    console.log( this ); //will log the jQuery collection returned by `$( 'div:in-viewport' )`
+    console.log( this ); //will log the current jQuery element object it's being called on
   })
   .css( 'background-color', 'red' );
 
