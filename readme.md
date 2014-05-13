@@ -2,7 +2,7 @@ isInViewport.js
 ================
 [![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)   
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
-Did you say [demo](http://experiments.muditameta.com/isInViewport/)?
+Did you say [demo](http://experiments.muditameta.com/isInViewport/) (inclusive of tests & code coverage)?
 
 Current version: `2.1.0`   
 - Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
