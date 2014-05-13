@@ -1,4 +1,4 @@
-function runIsInViewport(tol) {
+function runCustomIsInViewport(tol) {
   $('#viewport > div.box').css('background-color', '#21221E').text('out of viewport');
   if (typeof tol !== 'undefined')
     $('#viewport > div.box:in-viewport(' + tol + ', #viewport)').css('background-color', '#C5C7BC').text('in viewport');
@@ -14,7 +14,7 @@ describe('isInViewport', function() {
     before(function() {
       var html = '<div id="container"><div id="viewport"><div class="box">1</div></div></div>';
       $('body').prepend(html);
-      runIsInViewport(100);
+      runCustomIsInViewport(100);
       div = $('.box');
     });
 
@@ -25,13 +25,13 @@ describe('isInViewport', function() {
     function top(x, tol) {
       div.css('top', '0');
       div.css('top', x + 'px');
-      runIsInViewport(tol);
+      runCustomIsInViewport(tol);
     }
 
     function left(x, tol) {
       div.css('left', '0');
       div.css('left', x + 'px');
-      runIsInViewport(tol);
+      runCustomIsInViewport(tol);
     }
 
     describe('tolerance is 100', function() {

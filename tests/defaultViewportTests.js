@@ -151,11 +151,11 @@ describe('isInViewport', function() {
               catch (e) {
                 e.message.should.be.exactly('isInViewport: Argument(s) passed to .do should be a function or an array of functions');
               }
-              
+
             });
           });
           describe('when array containing mixed values is passed to .do', function() {
-            it('should ignore all non-function values and execute the functions that are in the array',function(){
+            it('should ignore all non-function values and execute the functions that are in the array', function() {
               var divs = $('div.box:in-viewport');
               var temp = 0;
               var faultyArray = [1, 'test',
@@ -217,6 +217,14 @@ describe('isInViewport', function() {
       it('should be window.height - abs(tolerance)', function() {
         var winHt = $(window).height();
         top(winHt - 100, -100);
+        div.text().should.be.exactly('in viewport');
+      });
+    });
+
+    describe('when tolerance is not a number', function() {
+      it('should return default tolerance to 0', function() {
+        top(0, 'ads');
+        left(0, 'ad');
         div.text().should.be.exactly('in viewport');
       });
     });

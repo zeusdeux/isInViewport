@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         globals: {
           'describe': true,
           'should': true,
-          'it':true,
+          'it': true,
           'before': true,
           'after': true
         },
@@ -42,18 +42,18 @@ module.exports = function(grunt) {
         node: true
       }
     },
-    mocha_phantomjs: {
-      src: ['tests/*.html'],
+    blanket_mocha: {
+      all: ['tests/*.html'],
       options: {
-        reporter: 'dot'
+        threshold: 80
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-mocha-phantomjs');
-  grunt.registerTask('default', ['jshint', 'mocha_phantomjs', 'uglify']);
-  grunt.registerTask('min', ['mocha_phantomjs', 'uglify']);
-  grunt.registerTask('test', ['mocha_phantomjs']);
+  grunt.loadNpmTasks('grunt-blanket-mocha');
+  grunt.registerTask('default', ['jshint', 'blanket_mocha', 'uglify']);
+  grunt.registerTask('min', ['blanket_mocha', 'uglify']);
+  grunt.registerTask('test', ['blanket_mocha']);
 };

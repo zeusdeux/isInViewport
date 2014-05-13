@@ -3,9 +3,9 @@
   // Documentation: https://github.com/einars/js-beautify/
   "html": {
     "allowed_file_extensions": ["htm", "html", "xhtml", "xml"],
-    "brace_style": "collapse", // "expand", "end-expand", "expand-strict"
+    "brace_style": "end-expand", // "expand", "collapse", "expand-strict"
     "indent_char": " ",
-    "indent_scripts": "keep", // "separate", "normal"
+    "indent_scripts": "normal", // "separate", "keep"
     "indent_size": 2,
     "max_preserve_newlines": 4,
     "preserve_newlines": true,
