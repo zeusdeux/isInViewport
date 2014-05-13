@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="./common.css" />
     <style>
     #header {
-        width: 960px;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
     }
+    #header h1 {
+        width: 300px;
+        margin: 10px auto;
+    }
     #container {
-        width: 960px;
+        width: 100%;
         margin: 10% auto;
         text-align: center;
     }
@@ -25,9 +29,9 @@
     }
     .demos {
         display: inline-block;
-        margin:5px 20px;
+        margin:20px 20px;
         height: 200px;
-        width: 300px;
+        width: 350px;
         background-color: #1F201C;
         color: #fff;
         text-align: center;
@@ -38,7 +42,14 @@
     .demos:hover {
         background-color: #E6E7E2;
         color: #151612;
-        box-shadow: 1px 1px 7px 1px #999;
+        box-shadow: 1px 1px 6px 0px #aaa;
+    }
+    .demos.tests{
+        background-color: #1AD055;
+    }
+    .demos.tests:hover{
+        background-color: #FE83A2;
+        color: #fff;
     }
     .left {
         float: left;
@@ -77,6 +88,9 @@
         </a>
         <a href="./advanced-viewport.html" class="demos">
             Custom viewport demo
+        </a>
+        <a href="../tests/tests.html" class="demos tests">
+            Tests &amp; code coverage
         </a>
     </div>
 </body>
