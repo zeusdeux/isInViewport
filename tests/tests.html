@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>isInViewport: Default viewport tests</title>
   <link rel="stylesheet" href="./lib/mocha.css" />
+  <link rel="stylesheet" href="../examples/common.css" />
   <style>
     #container {
       width: 100%;
@@ -26,10 +27,40 @@
       margin-bottom: 2px;
       position: relative;
     }
+    .nav {
+      height: 62px;
+      width: 100%;
+      background: rgb(212, 12, 20);
+      background-color: rgba(10, 45,23, 0.4);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      font-size: 1.2em;
+    }
+    .nav:before, .nav:after {
+      content:"";
+      display: table;
+    }
+    .nav:after {
+      clear: both;
+    }
+    .nav {
+      zoom: 1;
+      /* For IE 6/7 (trigger hasLayout) */
+    }
+    .nav * {
+      padding: 19px 36px;
+      color: #fff;
+    }
   </style>
 </head>
 
 <body>
+  <div class="nav">
+    <a href="../examples" class="button left">Back</a>
+    <a href="../examples" class="right">isInViewport.js</a>
+  </div>
   <div id="mocha"></div>
   <script src="./lib/jquery.min.js"></script>
   <script src="../lib/isInViewport.js" data-cover></script>
