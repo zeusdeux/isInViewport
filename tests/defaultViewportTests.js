@@ -141,21 +141,31 @@ describe('isInViewport', function() {
               });
             });
           });
-          describe('when values other than an array or functions are passed to .do', function() {
+          describe('when values other than functions are passed to .do', function() {
             it('should throw an error', function() {
               var divs = $('div.box:in-viewport');
-              var faultyArray = [1, 'test',
-                function() {
-                  console.log(this);
-                }
-              ];
+              divs.should.have.length(2, 'length isn\'t 2');
               try {
-                divs.do(faultyArray);
                 divs.do('boooop');
               }
               catch (e) {
                 e.message.should.be.exactly('isInViewport: Argument(s) passed to .do should be a function or an array of functions');
               }
+              
+            });
+          });
+          describe('when array containing mixed values is passed to .do', function() {
+            it('should ignore all non-function values and execute the functions that are in the array',function(){
+              var divs = $('div.box:in-viewport');
+              var temp = 0;
+              var faultyArray = [1, 'test',
+                function() {
+                  return ++temp;
+                }
+              ];
+              divs.should.have.length(2, 'length isn\'t 2');
+              divs.do(faultyArray);
+              temp.should.be.exactly(2, 'The only function in faultyArray didn\'t run'); //2 since there are 2 divs
             });
           });
           describe('when an array of functions is passed to .do', function() {
