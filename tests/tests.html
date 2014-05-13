@@ -42,8 +42,11 @@
     mocha.reporter('html');
   </script>
 
+  <!-- <script src="./lib/blanket.min.js" data-cover-reporter="lcov_reporter.js"></script> -->
   <script src="./lib/blanket.min.js"></script>
+  <!-- <script src="./lib/lcov_reporter.js"></script> -->
   <script type="text/javascript" src="../node_modules/grunt-blanket-mocha/support/mocha-blanket.js"></script>
+
   <script src="defaultViewportTests.js"></script>
   <script src="customViewportTests.js"></script>
 
@@ -61,6 +64,7 @@
   <script>
     if (window.PHANTOMJS) {
       blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+      //blanket.options("reporter", "./lib/lcov_reporter.js");
     }
   </script>
 

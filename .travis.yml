@@ -3,3 +3,4 @@ node_js:
   - "0.10"
 script:
   npm run-script build
+after_script:  npm run-script coveralls

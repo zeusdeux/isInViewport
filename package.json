@@ -6,7 +6,8 @@
   "main": "lib/isInViewport.js",
   "scripts": {
     "test": "grunt test",
-    "build": "grunt"
+    "build": "grunt",
+    "coveralls": "./node_modules/.bin/poncho -R lcov tests/tests.html | ./node_modules/coveralls/bin/coveralls.js"
   },
   "directories": {
     "example": "examples"
@@ -25,6 +26,7 @@
     "url": "https://github.com/zeusdeux/isInViewport/issues"
   },
   "devDependencies": {
+    "coveralls": "^2.10.0",
     "grunt": "0.4.x",
     "grunt-blanket-mocha": "^0.4.0",
     "grunt-cli": "^0.1.13",
@@ -32,6 +34,7 @@
     "grunt-contrib-uglify": "0.2.x",
     "mocha": "^1.18.2",
     "phantomjs": "^1.9.7-4",
+    "poncho": "^0.1.1",
     "should": "^3.3.1"
   }
 }
