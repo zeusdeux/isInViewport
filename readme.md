@@ -7,14 +7,14 @@ Did you say [demo](http://experiments.muditameta.com/isInViewport/) (inclusive o
 Current version: `2.1.0`   
 - Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
 ```javascript
-//usage 1: pass a function in
+//usage 1: pass a function
 $( 'div:in-viewport' )
   .do(function(){
     console.log( this ); //will log the current jQuery element object it's being called on
   })
   .css( 'background-color', 'red' );
 
-//usage 2: pass an array of functions in
+//usage 2: pass an array of functions
 var fnArray = [
                 function(){ console.log("Fn 1: %o", this); }, 
                 function(){ console.log("Fn 2: %o", this); }
