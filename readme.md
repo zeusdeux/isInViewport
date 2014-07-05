@@ -27,6 +27,7 @@ $( 'div:in-viewport' ).do(fnArray);
 Previous version: `2.0.0`
 - Added support for negative `tolerance` values that are now relative to the `viewport` height
 - Added support for custom viewport selector (see [Advanced usage](#advanced-usage))
+- Added support for checking if an element is in viewport both horizontally and vertically. (checks both now)
 - Removed support for the old usage syntax in favour of the `:in-viewport` selector i.e.,
 ```javascript
 //removed
