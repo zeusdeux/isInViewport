@@ -1,11 +1,17 @@
 isInViewport.js
 ================
-[![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)   
+[![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)
+
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
 Did you say [demo](http://experiments.muditameta.com/isInViewport/) (inclusive of tests & code coverage)?
 
-Current version: `2.1.0`   
+Current version: `2.2.0`
+- Aliased the `.do` method with `.run` since `do` is a reserved word and errors out when used as a property in IE. To be on the safer side, use `.run` to chain any arbitrary function or an array of functions.
+
+Previous version: `2.1.0`
+
 - Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
+
 ```javascript
 //usage 1: pass a function
 $( 'div:in-viewport' )
@@ -16,13 +22,13 @@ $( 'div:in-viewport' )
 
 //usage 2: pass an array of functions
 var fnArray = [
-                function(){ console.log("Fn 1: %o", this); }, 
+                function(){ console.log("Fn 1: %o", this); },
                 function(){ console.log("Fn 2: %o", this); }
-                //or say another function that maybe adds 
+                //or say another function that maybe adds
                 //elements to be tracked when in viewport
               ];
 $( 'div:in-viewport' ).do(fnArray);
-``` 
+```
 
 Previous version: `2.0.0`
 - Added support for negative `tolerance` values that are now relative to the `viewport` height
@@ -37,7 +43,7 @@ $( selector ).isInViewport( {"tolerance" :100, "debug": true} )
 $( 'selector:in-viewport( 100 )' )
 ```
 - Removed the `debug` option because, lets be honest, no one really used it.
-- Removed the weird code that handled *end of page* condition in the core. It's the user's 
+- Removed the weird code that handled *end of page* condition in the core. It's the user's
 prerogative to do what he/she wants when their page is scrolled to *end of page*.
 
 Previous version: `1.1.1`
@@ -61,7 +67,7 @@ Usage
 ```javascript
 $( 'selector:in-viewport' )
 ```
-When used as a selector it returns all the elements that match. Since it returns the element(s) it can *thus be chained* with other jQuery methods. 
+When used as a selector it returns all the elements that match. Since it returns the element(s) it can *thus be chained* with other jQuery methods.
 
 ###### Example:
 ```javascript
@@ -74,10 +80,14 @@ This will set the `background-color` as `red` for all `divs` that are in the vie
 ```javascript
 $( 'selector:in-viewport( tolerance[, viewport selector] )' )
 ```
-This returns all the elements that are in the viewport while taking into account the `tolerance` criterion.   
-Since it returns the element(s) it can *thus be chained* with other jQuery methods.   
-When a viewport selector is specified, it uses that to calculate if the element is in *that* viewport or not.   
-When a viewport selector is *not* specified, it defaults to *window* as the viewport.   
+This returns all the elements that are in the viewport while taking into account the `tolerance` criterion.
+
+Since it returns the element(s) it can *thus be chained* with other jQuery methods.
+
+When a viewport selector is specified, it uses that to calculate if the element is in *that* viewport or not.
+
+When a viewport selector is *not* specified, it defaults to *window* as the viewport.
+
 The viewport selector is any valid jQuery selector.
 
 ###### Defaults:
@@ -98,9 +108,10 @@ $( 'div:in-viewport( -100 )' ).css( 'background-color', 'green' );
 $('#viewport > div.box:in-viewport( 100, #viewport )').css( 'background-color', 'blue' )
                                                       .text( 'in viewport' );
 ```
-__Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.   
 
-__Example 2__ will set the `background-color` as `green` for all `divs` that are in the viewport with a `tolerance` of `viewport height - 100px`. This lets the user conveniently provide a `tolerance` value closer to the viewport height without having to call `$(viewport).height()` all the time.   
+__Example 1__ will set the `background-color` as `red` for all `divs` that are in the viewport with a `tolerance` of `100px`.
+
+__Example 2__ will set the `background-color` as `green` for all `divs` that are in the viewport with a `tolerance` of `viewport height - 100px`. This lets the user conveniently provide a `tolerance` value closer to the viewport height without having to call `$(viewport).height()` all the time.
 
 __Example 3__ will set the `background-color` as `blue` and `text` as `in viewport` for all `divs` that are in the custom viewport given by `#viewport` and with a `tolerance` of `100px`.
 
@@ -108,8 +119,9 @@ With the advanced usage it becomes very easy to build things like menus with ite
 
 See the examples in the `examples` directory for more clarity.
 
-###### Note:  
-- When `tolerance` is `0` or `undefined` it is actually *equal to* `tolerance: $(viewport).height()` and *not* `0`.   
+###### Note:
+- When `tolerance` is `0` or `undefined` it is actually *equal to* `tolerance: $(viewport).height()` and *not* `0`.
+
 This makes it easier for developers to have the whole `viewport` available to them as a valid `viewport`.
 
 ## Support

@@ -143,18 +143,18 @@ describe('isInViewport', function() {
         });
       });
     });
-    
-    describe('when tolerance is -100', function(){
-      it('should be window.height - abs(tolerance)',function(){
+
+    describe('when tolerance is -100', function() {
+      it('should be window.height - abs(tolerance)', function() {
         var viewportHt = $(viewport).height();
-        top(viewportHt-100, -100);
+        top(viewportHt - 100, -100);
         div.text().should.be.exactly('in viewport');
       });
     });
 
-    describe('when tolerance is undefined', function(){
-      describe('when viewport is specified', function (){
-        describe('when div is inside viewport',function(){
+    describe('when tolerance is undefined', function() {
+      describe('when viewport is specified', function() {
+        describe('when div is inside viewport', function() {
           it('should return the text from div as "in viewport"', function() {
             left(0);
             top(0);
