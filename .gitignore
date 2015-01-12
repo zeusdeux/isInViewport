@@ -25,3 +25,5 @@ isInViewport_*.js
 .gitattributes
 *.log
 /**/*.dmp
+TAGS
+/**/*.tern-port
