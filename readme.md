@@ -5,61 +5,10 @@ isInViewport.js
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
 Did you say [demo](http://experiments.muditameta.com/isInViewport/) (inclusive of tests & code coverage)?
 
-Current version `2.2.1`
-- Pulled in a few bugfixes
-- Fixed ie8 bugs
-
-Previous version: `2.2.0`
-- Aliased the `.do` method with `.run` since `do` is a reserved word and errors out when used as a property in IE. To be on the safer side, use `.run` to chain any arbitrary function or an array of functions.
-
-Previous version: `2.1.0`
-
-- Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
-
-```javascript
-//usage 1: pass a function
-$( 'div:in-viewport' )
-  .do(function(){
-    console.log( this ); //will log the current jQuery element object it's being called on
-  })
-  .css( 'background-color', 'red' );
-
-//usage 2: pass an array of functions
-var fnArray = [
-                function(){ console.log("Fn 1: %o", this); },
-                function(){ console.log("Fn 2: %o", this); }
-                //or say another function that maybe adds
-                //elements to be tracked when in viewport
-              ];
-$( 'div:in-viewport' ).do(fnArray);
-```
-
-Previous version: `2.0.0`
-- Added support for negative `tolerance` values that are now relative to the `viewport` height
-- Added support for custom viewport selector (see [Advanced usage](#advanced-usage))
-- Added support for checking if an element is in viewport both horizontally and vertically. (checks both now)
-- Removed support for the old usage syntax in favour of the `:in-viewport` selector i.e.,
-```javascript
-//removed
-$( selector ).isInViewport( {"tolerance" :100, "debug": true} )
-
-//current usage
-$( 'selector:in-viewport( 100 )' )
-```
-- Removed the `debug` option because, lets be honest, no one really used it.
-- Removed the weird code that handled *end of page* condition in the core. It's the user's
-prerogative to do what he/she wants when their page is scrolled to *end of page*.
-
-Previous version: `1.1.1`
-- Added `bower` support.
-
-Previous version: `1.1.0`
-- Added support for `:in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
-
 Installation
 ----------------
-- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) ( or `bower install isInViewport` )
--  Copy either `isInViewport.js` or `isInViewport.min.js` from the `lib` folder to your folder containing your scripts
+- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) ( or `bower install isInViewport` or `npm install is-in-viewport`)
+- Copy either `isInViewport.js` or `isInViewport.min.js` from the `lib` folder to your folder containing your scripts
 - Add it after you include `jQuery`
 - You're ready to go!
 
@@ -134,3 +83,67 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 ## Note
 - `:in-viewport` selector *does* support chaining.
 - To use with IE < 9 use jQuery <= 1.7.0
+
+Changelog
+----------------
+
+`2.2.2`
+
+- Published to `npm`
+- Updated install instructions to include `npm`
+
+`2.2.1`
+
+- Pulled in a few bugfixes
+- Fixed ie8 bugs
+
+`2.2.0`
+
+- Aliased the `.do` method with `.run` since `do` is a reserved word and errors out when used as a property in IE. To be on the safer side, use `.run` to chain any arbitrary function or an array of functions.
+
+`2.1.0`
+
+- Added a `.do` method that lets the user chain any arbitrary function or an array of functions. Example:
+
+```javascript
+//usage 1: pass a function
+$( 'div:in-viewport' )
+  .do(function(){
+    console.log( this ); //will log the current jQuery element object it's being called on
+  })
+  .css( 'background-color', 'red' );
+
+//usage 2: pass an array of functions
+var fnArray = [
+                function(){ console.log("Fn 1: %o", this); },
+                function(){ console.log("Fn 2: %o", this); }
+                //or say another function that maybe adds
+                //elements to be tracked when in viewport
+              ];
+$( 'div:in-viewport' ).do(fnArray);
+```
+
+`2.0.0`
+
+- Added support for negative `tolerance` values that are now relative to the `viewport` height
+- Added support for custom viewport selector (see [Advanced usage](#advanced-usage))
+- Added support for checking if an element is in viewport both horizontally and vertically. (checks both now)
+- Removed support for the old usage syntax in favour of the `:in-viewport` selector i.e.,
+```javascript
+//removed
+$( selector ).isInViewport( {"tolerance" :100, "debug": true} )
+
+//current usage
+$( 'selector:in-viewport( 100 )' )
+```
+- Removed the `debug` option because, lets be honest, no one really used it.
+- Removed the weird code that handled *end of page* condition in the core. It's the user's
+prerogative to do what he/she wants when their page is scrolled to *end of page*.
+
+`1.1.1`
+
+- Added `bower` support.
+
+`1.1.0`
+
+- Added support for `:in-viewport` selector as per [joeframbach's](http://www.reddit.com/user/joeframbach) suggestion.
