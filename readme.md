@@ -5,7 +5,11 @@ isInViewport.js
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
 Did you say [demo](http://experiments.muditameta.com/isInViewport/) (inclusive of tests & code coverage)?
 
-Current version: `2.2.0`
+Current version `2.2.1`
+- Pulled in a few bugfixes
+- Fixed ie8 bugs
+
+Previous version: `2.2.0`
 - Aliased the `.do` method with `.run` since `do` is a reserved word and errors out when used as a property in IE. To be on the safer side, use `.run` to chain any arbitrary function or an array of functions.
 
 Previous version: `2.1.0`
