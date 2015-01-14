@@ -17,7 +17,8 @@
   },
   "keywords": [
     "viewport",
-    "jquery"
+    "jquery",
+    "jquery-plugin"
   ],
   "author": "Mudit Ameta",
   "license": "MIT",
