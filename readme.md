@@ -20,13 +20,18 @@ Usage
 ```javascript
 $( 'selector:in-viewport' )
 ```
-When used as a selector it returns all the elements that match. Since it returns the element(s) it can *thus be chained* with other jQuery methods.
+When used as a selector it returns all the elements that match. Since it returns the element(s) it can *thus be chained* with other jQuery methods. It can also be used with jquery's `.is`.
 
 ###### Example:
 ```javascript
 $( 'div:in-viewport' ).css( 'background-color', 'red' );
+// same as 
+var $div = $( 'div' );
+if ( $div.is( ':in-viewport' ) ) {
+  $div.css( 'background-color', 'red' );
+}
 ```
-This will set the `background-color` as `red` for all `divs` that are in the viewport.
+Both of the above will set the `background-color` as `red` for all `divs` that are in the viewport.
 
 #### Advanced usage
 
