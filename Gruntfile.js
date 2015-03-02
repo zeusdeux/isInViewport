@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
+  var pkg = grunt.file.readJSON('package.json');
+  // normalize package name to camel case from hyphenated style thats in package.json
+  pkg.name = pkg.name.split('-').map(function(v, i){ if (0 === i) return v; else return v[0].toUpperCase() + v.slice(1); }).join('');
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: pkg,
     uglify: {
       options: {
         banner: '/*\n' + ' * @author  Mudit Ameta\n' + ' * @license https://github.com/zeusdeux/isInViewport/blob/master/license.md MIT\n' + ' */\n'
