@@ -25,7 +25,7 @@ When used as a selector it returns all the elements that match. Since it returns
 ###### Example:
 ```javascript
 $( 'div:in-viewport' ).css( 'background-color', 'red' );
-// same as 
+// same as
 var $div = $( 'div' );
 if ( $div.is( ':in-viewport' ) ) {
   $div.css( 'background-color', 'red' );
@@ -91,6 +91,11 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
 Changelog
 ----------------
+
+`2.2.3`
+
+- Allow use as CommonJS -> [#19](https://github.com/zeusdeux/isInViewport/pull/19)
+- Fixed gruntfile. It now generates proper filenames during build.
 
 `2.2.2`
 
