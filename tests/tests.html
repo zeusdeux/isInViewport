@@ -53,6 +53,26 @@
       padding: 19px 36px;
       color: #fff;
     }
+    ul#blocks {
+      padding: 0;
+      width: 600px;
+      height: 170px;
+      overflow-x: scroll;
+      white-space: nowrap;
+      font-size: 0;
+    }
+
+    ul#blocks li {
+      box-sizing: border-box;
+      display: inline-block;
+      background-color: #ff0000;
+      height: 150px;
+      width: 150px;
+      text-align: center;
+      font-size: 50px;
+      padding: 50px;
+      border: 1px solid #fff;
+    }
   </style>
 </head>
 
@@ -77,6 +97,7 @@
   <script type="text/javascript" src="./lib/mocha-blanket.js"></script>
   <script src="defaultViewportTests.js"></script>
   <script src="customViewportTests.js"></script>
+  <script src="horizontallyScrollingViewportTests.js"></script>
 
   <script>
     mocha.checkLeaks();
