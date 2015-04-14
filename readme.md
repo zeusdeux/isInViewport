@@ -92,6 +92,10 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 Changelog
 ----------------
 
+`2.2.4`
+
+- Pulled [#15](https://github.com/zeusdeux/isInViewport/pull/15)(fixes horizontal viewport check)
+
 `2.2.3`
 
 - Allow use as CommonJS -> [#19](https://github.com/zeusdeux/isInViewport/pull/19)
