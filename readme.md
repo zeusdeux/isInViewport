@@ -147,6 +147,8 @@ Changelog
     .isInViewport({ tolerance: 100, viewport: $viewport }) // <- passing the viewport jQuery object in directly
     .css(color: 'red');
   ```
+- Deprecated `do` in favour of `run`
+- When available, `isInViewport` now uses `Sizzle.selectors.createPseudo`
 
 `2.2.5`
 
