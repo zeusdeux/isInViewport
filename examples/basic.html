@@ -18,11 +18,15 @@
        width: 100%;
        margin-bottom: 2px;
        position: relative;
+       text-align: center;
      }
      p {
        padding: 0;
        margin: 0;
        line-height: 1.5em;
+       position: relative;
+       top: 50%;
+       transform: translateY(-50%);
      }
      .first {
        position: absolute;
@@ -87,7 +91,7 @@
       <div class="box">
         <div class="first">
           <p>Initially no options are passed to the :in-viewport selector.</p>
-          <p>Hence all visible div(s) are light grey coloured.</p>
+          <p>Hence all visible div(s) are light grey coloured as default tolerance is height of window.</p>
           <p>onscroll, in-viewport is called with tolerance as 100</p>
           <p>and debug as true for the div with class `js-hook` ie the 2nd div.</p>
           <p>Therefore 2nd div turns light grey only when it is inside tolerance area.</p>
