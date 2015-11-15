@@ -9,11 +9,11 @@
       $('.js-hook').css({
         'background-color': '#21221E',
         'color': '#fff'
-      }).text(t);
+      }).find('p').text(t);
       $('.js-hook:in-viewport(100)').css({
         'background-color': '#C5C7BC',
         'color': '#151612'
-      }).text('Now in viewport.');
+      }).find('p').text('Now in viewport.');
     });
   });
 }(jQuery));
