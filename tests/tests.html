@@ -1,121 +1,121 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>isInViewport: Default viewport tests</title>
-  <link rel="stylesheet" href="./lib/mocha.css" />
-  <link rel="stylesheet" href="../examples/common.css" />
-  <style>
-    #container {
-      width: 100%;
-    }
-    #viewport {
-      width: 400px;
-      height: 500px;
-      margin: 0;
-      overflow: auto;
-    }
-    .box {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-      box-sizing: border-box;
-      background-color: #C5C7BC;
-      height: 200px;
-      width: 100%;
-      margin-bottom: 2px;
-      position: relative;
-    }
-    .nav {
-      height: 62px;
-      width: 100%;
-      background: rgb(212, 12, 20);
-      background-color: rgba(10, 45,23, 0.4);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      font-size: 1.2em;
-    }
-    .nav:before, .nav:after {
-      content:"";
-      display: table;
-    }
-    .nav:after {
-      clear: both;
-    }
-    .nav {
-      zoom: 1;
-      /* For IE 6/7 (trigger hasLayout) */
-    }
-    .nav * {
-      padding: 19px 36px;
-      color: #fff;
-    }
-    ul#blocks {
-      padding: 0;
-      width: 600px;
-      height: 170px;
-      overflow-x: scroll;
-      white-space: nowrap;
-      font-size: 0;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <title>isInViewport: Default viewport tests</title>
+    <link rel="stylesheet" href="./lib/mocha.css" />
+    <link rel="stylesheet" href="/common.css" />
+    <style>
+     #container {
+       width: 100%;
+     }
+     #viewport {
+       width: 400px;
+       height: 500px;
+       margin: 0;
+       overflow: auto;
+     }
+     .box {
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       -ms-box-sizing: border-box;
+       box-sizing: border-box;
+       background-color: #C5C7BC;
+       height: 200px;
+       width: 100%;
+       margin-bottom: 2px;
+       position: relative;
+     }
+     .nav {
+       height: 62px;
+       width: 100%;
+       background: rgb(212, 12, 20);
+       background-color: rgba(10, 45,23, 0.4);
+       position: fixed;
+       top: 0;
+       left: 0;
+       z-index: 1;
+       font-size: 1.2em;
+     }
+     .nav:before, .nav:after {
+       content:"";
+       display: table;
+     }
+     .nav:after {
+       clear: both;
+     }
+     .nav {
+       zoom: 1;
+       /* For IE 6/7 (trigger hasLayout) */
+     }
+     .nav * {
+       padding: 19px 36px;
+       color: #fff;
+     }
+     ul#blocks {
+       padding: 0;
+       width: 600px;
+       height: 170px;
+       overflow-x: scroll;
+       white-space: nowrap;
+       font-size: 0;
+     }
 
-    ul#blocks li {
-      box-sizing: border-box;
-      display: inline-block;
-      background-color: #ff0000;
-      height: 150px;
-      width: 150px;
-      text-align: center;
-      font-size: 50px;
-      padding: 50px;
-      border: 1px solid #fff;
-    }
-  </style>
-</head>
+     ul#blocks li {
+       box-sizing: border-box;
+       display: inline-block;
+       background-color: #ff0000;
+       height: 150px;
+       width: 150px;
+       text-align: center;
+       font-size: 50px;
+       padding: 50px;
+       border: 1px solid #fff;
+     }
+    </style>
+  </head>
 
-<body>
-  <div class="nav">
-    <a href="../examples" class="button left">Back</a>
-    <a href="../examples" class="right">isInViewport.js</a>
-  </div>
-  <div id="mocha"></div>
-  <script src="./lib/jquery.min.js"></script>
-  <script src="../lib/isInViewport.js" data-cover></script>
+  <body>
+    <div class="nav">
+      <a href="/" class="button left">Back</a>
+      <a href="/" class="right">isInViewport.js</a>
+    </div>
+    <div id="mocha"></div>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/isInViewport.js" data-cover></script>
 
-  <script src="./lib/should.min.js"></script>
-  <script src="./lib/mocha.js"></script>
+    <script src="./lib/should.min.js"></script>
+    <script src="./lib/mocha.js"></script>
 
-  <script>
-    mocha.ui('bdd');
-    mocha.reporter('html');
-  </script>
+    <script>
+     mocha.ui('bdd');
+     mocha.reporter('html');
+    </script>
 
-  <script src="./lib/blanket.min.js"></script>
-  <script type="text/javascript" src="./lib/mocha-blanket.js"></script>
-  <script src="defaultViewportTests.js"></script>
-  <script src="customViewportTests.js"></script>
-  <script src="horizontallyScrollingViewportTests.js"></script>
+    <script src="./lib/blanket.min.js"></script>
+    <script type="text/javascript" src="./lib/mocha-blanket.js"></script>
+    <script src="defaultViewportTests.js"></script>
+    <script src="customViewportTests.js"></script>
+    <script src="horizontallyScrollingViewportTests.js"></script>
 
-  <script>
-    mocha.checkLeaks();
-    mocha.globals(['jQuery']);
-    if (window.mochaPhantomJS) {
-      mochaPhantomJS.run();
-    }
-    else {
-      mocha.run();
-    }
-  </script>
+    <script>
+     mocha.checkLeaks();
+     mocha.globals(['jQuery']);
+     if (window.mochaPhantomJS) {
+       mochaPhantomJS.run();
+     }
+     else {
+       mocha.run();
+     }
+    </script>
 
-  <script>
-    if (window.PHANTOMJS) {
-      blanket.options("reporter", "./lib/grunt-reporter.js");
-    }
-  </script>
+    <script>
+     if (window.PHANTOMJS) {
+       blanket.options("reporter", "./lib/grunt-reporter.js");
+     }
+    </script>
 
-</body>
+  </body>
 
 </html>

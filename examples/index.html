@@ -1,98 +1,98 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>
-        isInViewport demo
+      isInViewport demo
     </title>
     <link rel="stylesheet" href="./common.css" />
     <style>
-    #header {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-    }
-    #header h1 {
-        width: 300px;
-        margin: 30px auto;
-    }
-    #container {
-        width: 100%;
-        margin: 4% auto;
-        text-align: center;
-    }
-    #container:after {
-        content:"";
-        display: block;
-        clear: both;
-    }
-    .demos {
-        display: inline-block;
-        margin:20px 20px;
-        height: 200px;
-        width: 350px;
-        background-color: #1F201C;
-        color: #fff;
-        text-align: center;
-        font-size: 1.5em;
-        line-height: 7.618em;
-        transition: background-color 0.12s linear;
-    }
-    .demos:hover {
-        background-color: #E6E7E2;
-        color: #151612;
-        box-shadow: 1px 1px 6px 0px #aaa;
-    }
-    .demos.tests{
-        background-color: #1AD055;
-    }
-    .demos.tests:hover{
-        background-color: #FE83A2;
-        color: #fff;
-    }
-    .left {
-        float: left;
-    }
+     #header {
+       width: 100%;
+       margin: 0 auto;
+       text-align: center;
+     }
+     #header h1 {
+       width: 300px;
+       margin: 30px auto;
+     }
+     #container {
+       width: 100%;
+       margin: 4% auto;
+       text-align: center;
+     }
+     #container:after {
+       content:"";
+       display: block;
+       clear: both;
+     }
+     .demos {
+       display: inline-block;
+       margin:20px 20px;
+       height: 200px;
+       width: 350px;
+       background-color: #1F201C;
+       color: #fff;
+       text-align: center;
+       font-size: 1.5em;
+       line-height: 7.618em;
+       transition: background-color 0.12s linear;
+     }
+     .demos:hover {
+       background-color: #E6E7E2;
+       color: #151612;
+       box-shadow: 1px 1px 6px 0px #aaa;
+     }
+     .demos.tests{
+       background-color: #1AD055;
+     }
+     .demos.tests:hover{
+       background-color: #FE83A2;
+       color: #fff;
+     }
+     .left {
+       float: left;
+     }
     </style>
     <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-33892300-1']);
-    _gaq.push(['_setDomainName', 'muditameta.com']);
-    _gaq.push(['_trackPageview']);
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-33892300-1']);
+     _gaq.push(['_setDomainName', 'muditameta.com']);
+     _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+     (function() {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(ga, s);
+     })();
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <a href="https://github.com/zeusdeux/isInViewport">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
     </a>
     <div id="header">
-        <h1>isInViewport.js</h1>
+      <h1>isInViewport.js</h1>
     </div>
     <div id="container">
-        <a href="./basic.html" class="demos">
-            Basic demo
-        </a>
-        <a href="./advanced.html" class="demos">
-            Advanced demo
-        </a>
-        <a href="./advanced-viewport.html" class="demos">
-            Custom viewport demo
-        </a>
-        <a href="../tests/tests.html" class="demos tests">
-            Tests &amp; code coverage
-        </a>
+      <a href="./basic.html" class="demos">
+        Basic demo
+      </a>
+      <a href="./advanced.html" class="demos">
+        Advanced demo
+      </a>
+      <a href="./advanced-viewport.html" class="demos">
+        Custom viewport demo
+      </a>
+      <a href="./tests/tests.html" class="demos tests">
+        Tests &amp; code coverage
+      </a>
     </div>
-</body>
+  </body>
 
 </html>
