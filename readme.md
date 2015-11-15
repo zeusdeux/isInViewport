@@ -94,6 +94,10 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 Changelog
 ----------------
 
+`2.2.5`
+
+- Updated readme to point to new demo. Mostly a bump for npm to pickup the new readme.
+
 `2.2.4`
 
 - Pulled [#15](https://github.com/zeusdeux/isInViewport/pull/15)(fixes horizontal viewport check)
