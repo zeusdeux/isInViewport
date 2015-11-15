@@ -37,6 +37,8 @@ Both of the above will set the `background-color` as `red` for all `divs` that a
 
 #### Advanced usage
 
+##### Using `in-viewport` pseudo-selector
+
 ```javascript
 $( 'selector:in-viewport( tolerance[, viewport selector] )' )
 ```
@@ -84,6 +86,47 @@ See the examples in the `examples` directory for more clarity.
 
 This makes it easier for developers to have the whole `viewport` available to them as a valid `viewport`.
 
+
+##### Using exposed `isInViewport` function
+
+```javascript
+$( 'selector' ).isInViewport({ tolerance: tolerance, viewport: viewport })
+```
+This returns all the elements that are in the viewport while taking into account the `tolerance` criterion.
+
+Since it returns the element(s) it can *thus be chained* with other jQuery methods.
+
+When a viewport is specified, it uses that to calculate if the element is in *that* viewport or not.
+
+When a viewport is *not* specified, it defaults to *window* as the viewport.
+
+**The viewport is a valid DOM element or jQuery wrapped DOM element, NOT a selector string.**
+
+###### Defaults:
+- `tolerance` defaults to `0`
+- `viewport` defaults to `window`
+
+###### Example:
+```javascript
+//example 1
+//the height of tolerance region is 100px from top of viewport
+$( 'div' ).isInViewport({ tolerance: 100 }).css( 'background-color', 'red' );
+
+//example 2
+//the height of tolerance region is (viewport.height - 100px) from top of viewport
+$( 'div' ).isInViewport({ tolerance: -100 }).css( 'background-color', 'green' );
+
+//example 3
+var $viewport = $('#viewport');
+
+$viewport
+  .find('div.box')
+  .isInViewport({ tolerance: 100, viewport: $viewport })
+  .css( 'background-color', 'blue' )
+  .text( 'in viewport' );
+```
+
+
 ## Support
 __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
@@ -93,6 +136,19 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
 Changelog
 ----------------
+`2.3.0`
+
+- Re-exposed `isInViewport` with saner semantics. You can now pass options as JS objects to `isInViewport` and hence can now do things like:
+  ```javascript
+  var $viewport = $(<viewport selector>);
+
+  $viewport
+    .find(<selector for elements>)
+    .isInViewport({ tolerance: 100, viewport: $viewport }) // <- passing the viewport jQuery object in directly
+    .css(color: 'red');
+  ```
+- Deprecated `do` in favour of `run`
+- When available, `isInViewport` now uses `Sizzle.selectors.createPseudo`
 
 `2.2.5`
 
