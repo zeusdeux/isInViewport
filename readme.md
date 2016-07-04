@@ -9,7 +9,7 @@ Did you say [demo](http://isinviewport.mudit.xyz) (inclusive of tests & code cov
 
 Installation
 ----------------
-- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) ( or `bower install isInViewport` or `npm install is-in-viewport`)
+- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) ( or `bower install is-in-viewport` or `npm install is-in-viewport`)
 - Copy either `isInViewport.js` or `isInViewport.min.js` from the `lib` folder to your folder containing your scripts
 - Add it after you include `jQuery`
 - You're ready to go!
