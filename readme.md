@@ -136,6 +136,15 @@ __Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
 
 Changelog
 ----------------
+`2.4.0`
+
+- Update `bower.json` to comply with new validations
+- Rename package on bower to match with that on npm i.e., `is-in-viewport`
+
+`2.3.1`
+
+- Remove unnecessary boolean coercion
+
 `2.3.0`
 
 - Re-exposed `isInViewport` with saner semantics. You can now pass options as JS objects to `isInViewport` and hence can now do things like:
