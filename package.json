@@ -1,6 +1,6 @@
 {
   "name": "is-in-viewport",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "private": false,
   "description": "An ultra-light jQuery plugin that tells you if an element is in the viewport but with a twist.",
   "main": "lib/isInViewport.js",
