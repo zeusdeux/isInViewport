@@ -6,7 +6,8 @@
   "main": "lib/isInViewport.js",
   "scripts": {
     "test": "grunt test",
-    "build": "grunt"
+    "build": "grunt",
+    "postinstall": "grunt"
   },
   "directories": {
     "example": "examples"
