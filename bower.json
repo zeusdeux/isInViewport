@@ -1,12 +1,12 @@
 {
-  "name": "is-in-viewport",
+  "name": "isInViewport",
   "version": "2.4.0",
   "homepage": "https://github.com/zeusdeux/isInViewport",
   "authors": [
     "Mudit Ameta <zeusdeux@gmail.com>"
   ],
   "description": "An ultra-light jQuery plugin that tells you if an element is in the viewport but with a twist.",
-  "main": "lib/isInViewport.js",
+  "main": "lib/isInViewport.min.js",
   "keywords": [
     "viewport",
     "jquery",
