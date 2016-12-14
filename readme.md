@@ -1,6 +1,7 @@
 isInViewport.js
 ================
 [![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)
+[![CDNJS](https://img.shields.io/cdnjs/v/is-in-viewport.svg)](https://cdnjs.com/libraries/is-in-viewport)
 
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
 Did you say [demo](http://isinviewport.mudit.xyz) (inclusive of tests & code coverage)?
