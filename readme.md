@@ -3,7 +3,7 @@ isInViewport.js
 [![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)
 
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
-Did you say [demo](http://isinviewport.mudit.xyz) (inclusive of tests & code coverage)?
+Did you say [demo](http://www.isinviewport.mudit.xyz) (inclusive of tests & code coverage)?
 
 ## NOTE: The demo is now back up!
 
