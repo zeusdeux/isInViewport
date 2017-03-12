@@ -129,14 +129,19 @@ $viewport
 
 
 ## Support
-__Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
+__Chrome, Firefox 3.5+, IE9+, Safari 5+, Opera 10.5+__
 
 ## Note
 - `:in-viewport` selector *does* support chaining.
-- To use with IE < 9 use jQuery <= 1.7.0
 
 Changelog
 ----------------
+`3.0.0`
+
+- Remove the deprecated `$(el).do` method
+- Remove support for browsers < {IE9, Safari 5, Opera 10.5, Firefox 3.5}
+- Add support for ES6 modules. You can now do `import 'is-in-viewport'` in your ES6 module.
+
 `2.4.2`
 
 - Remove `postInstall` script which was breaking builds
