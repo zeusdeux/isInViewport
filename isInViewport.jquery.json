@@ -7,11 +7,11 @@
         "isInViewport",
         "scroll"
     ],
-    "demo": "http://experiments.muditameta.com/isInViewport/",
+    "demo": "http://isinviewport.mudit.xyz/",
     "version": "3.0.0",
     "author": {
         "name": "Mudit Ameta",
-        "url": "http://www.muditameta.com/"
+        "url": "https://mudit.xyz"
     },
     "licenses": [
         {
