@@ -156,6 +156,7 @@ Changelog
 - Remove the deprecated `$(el).do` method
 - Remove support for browsers < { IE9, Safari 5, Opera 10.5, Firefox 3.5 }
 - Add support for modules and bundlers. You can now `import 'is-in-viewport'`/`require('is-in-viewport')` in your project (yay!)
+- Add properly functioning sourcemaps for easier debugging
 
 `2.4.2`
 
