@@ -3,6 +3,11 @@ function runIsInViewport(tol) {
   $('#container > div.box:in-viewport(' + tol + ')').css('background-color', '#C5C7BC').text('in viewport')
 }
 
+function runIsInViewportWithJqueryNot(tol) {
+  $('#container > div.box').not(':in-viewport(' + tol + ')').css('background-color', '#21221E').text('out of viewport')
+  $('#container > div.box:in-viewport(' + tol + ')').css('background-color', '#C5C7BC').text('in viewport')
+}
+
 function runIsInViewportVariant(tol) {
   $('#container > div.box').css('background-color', '#21221E').text('out of viewport')
   $('#container > div.box').isInViewport({ tolerance: tol }).css('background-color', '#C5C7BC').text('in viewport')
@@ -26,9 +31,9 @@ var runner = function(runIsInViewportFn, type) {
 
       after(removeContainer)
 
-      function top(x, tol) {
+      function top(y, tol) {
         div.css('top', '0')
-        div.css('top', x + 'px')
+        div.css('top', y + 'px')
         runIsInViewportFn(tol)
       }
 
@@ -123,7 +128,7 @@ var runner = function(runIsInViewportFn, type) {
             })
           })
           describe('when both divs are in viewport', function() {
-            describe('when an two arbitrary functions are chained using .do/.run', function() {
+            describe('when two arbitrary functions are chained using .do/.run', function() {
               describe('when the first fn changes inner text to done and second adds a class name given by inner text', function() {
                 it('should have added a class named "done" to both divs', function() {
                   removeContainer()
@@ -237,3 +242,4 @@ var runner = function(runIsInViewportFn, type) {
 
 runner(runIsInViewport, 'pseudo-selector')
 runner(runIsInViewportVariant, 'exposed isInViewport function')
+runner(runIsInViewportWithJqueryNot, 'jquery\'s .not selector')
