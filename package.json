@@ -6,7 +6,7 @@
   "main": "lib/isInViewport.js",
   "module": "lib/isInViewport.es6.js",
   "scripts": {
-    "test": "grunt test",
+    "test": "gulp test",
     "build": "gulp",
     "clean": "gulp clean",
     "prepublish": "gulp"
