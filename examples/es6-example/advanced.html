@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      ES6/ES2015 module isInViewport Example
+    </title>
+    <link rel="stylesheet" href="./common.css" />
+    <style>
+     .box {
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       -ms-box-sizing: border-box;
+       box-sizing: border-box;
+       background-color: #C5C7BC;
+       height: 501px;
+       width: 100%;
+       margin-bottom: 2px;
+       text-align: center;
+     }
+     p {
+       padding: 0;
+       margin: 0;
+       line-height: 1.5em;
+       position: relative;
+       top: 50%;
+       transform: translateY(-50%);
+     }
+     .box.last {
+       color: #C5C7BC;
+     }
+     .tolerance {
+       height: 100px;
+       width: 100%;
+       background-color: rgb(212, 12, 20);
+       background-color: rgba(255, 0, 0, 0.4);
+       position: fixed;
+       top: 0;
+       left: 0;
+       z-index: 1;
+     }
+     .tolerance:before, .tolerance:after {
+       content:"";
+       display: table;
+     }
+     .tolerance:after {
+       clear: both;
+     }
+     .tolerance {
+       zoom: 1;
+       /* For IE 6/7 (trigger hasLayout) */
+     }
+     .tolerance * {
+       padding: 36px;
+       color: #fff;
+     }
+    </style>
+    <script src="./advanced.compiled.js">
+    </script>
+  </head>
+
+  <body>
+    <div class="tolerance">
+      <a class="right">Tolerance Area (Tolerance = 100px)</a>
+    </div>
+    <div id="container">
+      <div class="box">
+        <p>
+          1
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          2
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          3
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          4
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          5
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          6
+        </p>
+      </div>
+      <div class="box last">
+        <p>
+          This div, if not in the tolerance area, will never turn light grey.
+        </p>
+      </div>
+    </div>
+  </body>
+
+</html>
