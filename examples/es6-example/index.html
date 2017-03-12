@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>
-      Advanced isInViewport Example
+      ES6/ES2015 module isInViewport Example
     </title>
     <link rel="stylesheet" href="./common.css" />
     <style>
@@ -56,32 +56,12 @@
        color: #fff;
      }
     </style>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js">
-    </script>
-    <script src="../lib/isInViewport.js">
-    </script>
-    <script src="./advanced.js">
-    </script>
-    <script type="text/javascript">
-     var _gaq = _gaq || [];
-     _gaq.push(['_setAccount', 'UA-33892300-1']);
-     _gaq.push(['_setDomainName', 'muditameta.com']);
-     _gaq.push(['_trackPageview']);
-
-     (function() {
-       var ga = document.createElement('script');
-       ga.type = 'text/javascript';
-       ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0];
-       s.parentNode.insertBefore(ga, s);
-     })();
+    <script src="./main.compiled.js">
     </script>
   </head>
 
   <body>
     <div class="tolerance">
-      <a href="./index.html" class="button left">Back</a>
       <a class="right">Tolerance Area (Tolerance = 100px)</a>
     </div>
     <div id="container">

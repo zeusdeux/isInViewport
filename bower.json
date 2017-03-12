@@ -1,6 +1,6 @@
 {
   "name": "isInViewport",
-  "version": "2.4.2",
+  "version": "3.0.0",
   "homepage": "https://github.com/zeusdeux/isInViewport",
   "authors": [
     "Mudit Ameta <zeusdeux@gmail.com>"
@@ -26,6 +26,7 @@
     "*.jquery.json",
     ".travis*",
     ".git*",
-    "/**/*.dmp"
+    "/**/*.dmp",
+    "/**/*compiled*"
   ]
 }

@@ -1,17 +1,32 @@
 isInViewport.js
 ================
-[![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=dev)](https://travis-ci.org/zeusdeux/isInViewport)
+[![Build Status](https://travis-ci.org/zeusdeux/isInViewport.svg?branch=master)](https://travis-ci.org/zeusdeux/isInViewport)
 [![CDNJS](https://img.shields.io/cdnjs/v/is-in-viewport.svg)](https://cdnjs.com/libraries/is-in-viewport)
 
 An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.
-Did you say [demo](http://www.isinviewport.mudit.xyz) (inclusive of tests & code coverage)?
 
-## NOTE: The demo is now back up!
+Did you say [demo](http://www.isinviewport.mudit.xyz) (inclusive of tests)?
 
 Installation
 ----------------
-- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) ( or `bower install isInViewport` or `npm install is-in-viewport`)
-- Copy either `isInViewport.js` or `isInViewport.min.js` from the `lib` folder to your folder containing your scripts
+#### Using in a module
+
+```js
+npm install --save is-in-viewport
+```
+You can then `require('is-in-viewport')` or `import 'is-in-viewport'` in your code.
+It will automagically work with the bundler of your choice. If it breaks, please feel free to open an issue.
+
+Example usage in an ES6/ES2015 module is shown [in the `examples/es6-example`](./examples/es6-example/) folder.
+
+__Note__: `isInViewport` is a side-effecting module. It imports `jquery` that you have installed and attaches itself on it.
+As a consequence, `isInViewport` requires `jquery` to be installed as a peer dependency.
+Your bundling will fail if `jquery` isn't installed as [`is-in-viewport` `import`s `jquery`](./src/index.js#L1).
+
+#### Using directly in a script tag
+
+- Get the release that you want from [releases/tags](https://github.com/zeusdeux/isInViewport/releases) (or `bower install isInViewport` or `npm install --save is-in-viewport`)
+- Copy/link either `isInViewport.js` or `isInViewport.min.js` and the respective sourcemap from the `lib` folder to your folder containing your scripts
 - Add it after you include `jQuery`
 - You're ready to go!
 
@@ -34,7 +49,7 @@ if ( $div.is( ':in-viewport' ) ) {
   $div.css( 'background-color', 'red' );
 }
 ```
-Both of the above will set the `background-color` as `red` for all `divs` that are in the viewport.
+Both of the above will set the `background-color` as `red` for all `div`s that are in the viewport.
 
 #### Advanced usage
 
@@ -129,14 +144,20 @@ $viewport
 
 
 ## Support
-__Chrome, Firefox 3.0+, IE6+, Safari 4.0+, Opera 10.0+__
+__Chrome, Firefox 3.5+, IE9+, Safari 5+, Opera 10.5+__
 
 ## Note
 - `:in-viewport` selector *does* support chaining.
-- To use with IE < 9 use jQuery <= 1.7.0
 
 Changelog
 ----------------
+`3.0.0`
+
+- Remove the deprecated `$(el).do` method
+- Remove support for browsers < { IE9, Safari 5, Opera 10.5, Firefox 3.5 }
+- Add support for modules and bundlers. You can now `import 'is-in-viewport'`/`require('is-in-viewport')` in your project (yay!)
+- Add properly functioning sourcemaps for easier debugging
+
 `2.4.2`
 
 - Remove `postInstall` script which was breaking builds

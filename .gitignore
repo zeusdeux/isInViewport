@@ -27,3 +27,5 @@ isInViewport_*.js
 /**/*.dmp
 TAGS
 /**/*.tern-port
+node_modules
+*compiled*

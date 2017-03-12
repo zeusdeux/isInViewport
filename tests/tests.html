@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>isInViewport: Default viewport tests</title>
     <link rel="stylesheet" href="./lib/mocha.css" />
-    <link rel="stylesheet" href="/common.css" />
     <style>
      #container {
        width: 100%;
@@ -28,7 +27,7 @@
        position: relative;
      }
      .nav {
-       height: 62px;
+       height: 40px;
        width: 100%;
        background: rgb(212, 12, 20);
        background-color: rgba(10, 45,23, 0.4);
@@ -37,6 +36,7 @@
        left: 0;
        z-index: 1;
        font-size: 1.2em;
+       padding-top: 24px;
      }
      .nav:before, .nav:after {
        content:"";
@@ -50,7 +50,7 @@
        /* For IE 6/7 (trigger hasLayout) */
      }
      .nav * {
-       padding: 19px 36px;
+       padding-left: 18px;
        color: #fff;
      }
      ul#blocks {
@@ -83,18 +83,16 @@
     </div>
     <div id="mocha"></div>
     <script src="./lib/jquery.min.js"></script>
-    <script src="./lib/isInViewport.js" data-cover></script>
+    <script src="./lib/isInViewport.min.js"></script>
 
-    <script src="./lib/should.min.js"></script>
     <script src="./lib/mocha.js"></script>
+    <script src="./lib/should.js"></script>
 
     <script>
      mocha.ui('bdd');
      mocha.reporter('html');
     </script>
 
-    <script src="./lib/blanket.min.js"></script>
-    <script type="text/javascript" src="./lib/mocha-blanket.js"></script>
     <script src="defaultViewportTests.js"></script>
     <script src="customViewportTests.js"></script>
     <script src="horizontallyScrollingViewportTests.js"></script>
@@ -109,11 +107,10 @@
        mocha.run();
      }
     </script>
-
     <script>
-     if (window.PHANTOMJS) {
-       blanket.options("reporter", "./lib/grunt-reporter.js");
-     }
+      if (window.PHANTOMJS) {
+        blanket.options("reporter", "./lib/grunt-reporter.js");
+      }
     </script>
   </body>
 </html>

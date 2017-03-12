@@ -1,12 +1,15 @@
 {
   "name": "is-in-viewport",
-  "version": "2.4.2",
+  "version": "3.0.0",
   "private": false,
   "description": "An ultra-light jQuery plugin that tells you if an element is in the viewport but with a twist.",
   "main": "lib/isInViewport.js",
+  "module": "lib/isInViewport.es6.js",
   "scripts": {
-    "test": "grunt test",
-    "build": "grunt"
+    "test": "gulp test",
+    "build": "gulp",
+    "clean": "gulp clean",
+    "prepublish": "gulp"
   },
   "directories": {
     "example": "examples"
@@ -25,14 +28,30 @@
   "bugs": {
     "url": "https://github.com/zeusdeux/isInViewport/issues"
   },
+  "peerDependencies": {
+    "jquery": ">1.7.0"
+  },
   "devDependencies": {
-    "grunt": "0.4.x",
-    "grunt-blanket-mocha": "^0.4.0",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-uglify": "0.2.x",
-    "mocha": "^1.18.2",
-    "phantomjs": "^1.9.7-4",
-    "should": "^3.3.1"
+    "del": "^2.2.2",
+    "eslint": "^3.17.1",
+    "eslint-config-standard": "^7.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-buble": "^0.8.0",
+    "gulp-cli": "^1.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha-phantomjs": "^0.12.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.1.0",
+    "mocha": "^3.2.0",
+    "pump": "^1.0.2",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-stream": "^1.19.0",
+    "should": "^11.2.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

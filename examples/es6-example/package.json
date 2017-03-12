@@ -1,0 +1,23 @@
+{
+  "name": "is-in-viewport-es6-example",
+  "version": "1.0.0",
+  "description": "An example of using is-in-viewport in an es6 module",
+  "main": "main.compiled.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rollup -c && serve . -p 8000",
+    "prepublish": "rollup -c"
+  },
+  "author": "Mudit Ameta",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.41.5",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "serve": "^5.0.3"
+  },
+  "dependencies": {
+    "is-in-viewport": "^3.0.0",
+    "jquery": "^3.1.1"
+  }
+}
