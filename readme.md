@@ -33,6 +33,7 @@ Your bundling will fail if `jquery` isn't installed as [`is-in-viewport` `import
 Usage
 ----------------
 <a name="bu"/>
+
 #### Basic usage
 
 ```javascript
