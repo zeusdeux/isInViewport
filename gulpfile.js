@@ -49,7 +49,7 @@ gulp.task('rollup', ['compile'], () => {
     moduleId: 'isInViewport',
     moduleName: 'isInViewport',
     globals: {
-      jquery: '$',
+      jquery: 'jQuery',
       window: 'window'
     },
     external: ['jquery', 'window']
