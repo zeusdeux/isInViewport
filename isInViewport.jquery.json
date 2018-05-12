@@ -1,14 +1,14 @@
 {
-    "name": "isInViewport",
-    "title": "isInViewport.js",
-    "description": "An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.",
-    "keywords": [
-        "viewport",
-        "isInViewport",
-        "scroll"
-    ],
-    "demo": "http://isinviewport.mudit.xyz/",
-  "version": "3.0.1",
+  "name": "isInViewport",
+  "title": "isInViewport.js",
+  "description": "An ultra-light jQuery plugin that tells you if the element is in the viewport, but with a twist.",
+  "keywords": [
+    "viewport",
+    "isInViewport",
+    "scroll"
+  ],
+  "demo": "http://isinviewport.mudit.xyz/",
+  "version": "3.0.2",
   "author": {
     "name": "Mudit Ameta",
     "url": "https://mudit.xyz"
