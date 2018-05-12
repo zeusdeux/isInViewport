@@ -44,10 +44,9 @@ gulp.task('compile', ['lint'], () => {
 // bundle it
 gulp.task('rollup', ['compile'], () => {
   return rollup({
-    entry: './lib/isInViewport.es6.js',
+    input: './lib/isInViewport.es6.js',
     format: 'umd',
-    moduleId: 'isInViewport',
-    moduleName: 'isInViewport',
+    name: 'isInViewport',
     globals: {
       jquery: 'jQuery',
       window: 'window'
