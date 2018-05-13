@@ -7,7 +7,7 @@ import window from 'window'
  */
 
 // expose isInViewport as a custom pseudo-selector
-$.extend($.expr[':'], {
+$.extend($.expr.pseudos || $.expr[':'], {
   // if $.expr.createPseudo is available, use it
   'in-viewport': $.expr.createPseudo
     ? $.expr.createPseudo(argsString => currElement => isInViewport(currElement, getSelectorArgs(argsString)))
