@@ -152,6 +152,18 @@ __Chrome, Firefox 3.5+, IE9+, Safari 5+, Opera 10.5+__
 
 Changelog
 ----------------
+`3.0.3`
+
+- Use `jQuery.expr.pseudos` when found since `jQuery.expr[':']` is deprecated
+
+`3.0.2`
+
+- Support new rollup properties and get rid of removed rollups properties (`moduleId`, `moduleName`, etc)
+
+`3.0.1`
+
+- Fix jQuery no conflict mode issue (#39)
+
 `3.0.0`
 
 - Remove the deprecated `$(el).do` method
