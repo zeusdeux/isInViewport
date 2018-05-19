@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import window from 'window'
 
 /**
  * @author  Mudit Ameta
