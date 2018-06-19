@@ -7,6 +7,8 @@ An ultra-light jQuery plugin that tells you if the element is in the viewport, b
 
 Did you say [demo](http://www.isinviewport.mudit.xyz) (inclusive of tests)?
 
+For a more performant alternative, please take a look at [observe-element-in-viewport](https://github.com/zeusdeux/observe-element-in-viewport) which uses the new `IntersectionObserver` API. Please keep in mind that you might have to ship a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for `IntersectionObserver` depending on the browsers you support.
+
 Installation
 ----------------
 #### Using in a module
