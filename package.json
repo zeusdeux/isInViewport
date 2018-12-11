@@ -9,7 +9,7 @@
     "test": "gulp test",
     "build": "gulp",
     "clean": "gulp clean",
-    "deploy": "now && now alias"
+    "deploy": "now -t $NOW_TOKEN && now alias -t $NOW_TOKEN"
   },
   "directories": {
     "example": "examples"
