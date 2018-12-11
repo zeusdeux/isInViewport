@@ -13,7 +13,11 @@
     { "src": "examples/index.html", "use": "@now/static" },
     { "src": "examples/isInViewport.js", "use": "@now/static" },
     { "src": "examples/isInViewport.js.map", "use": "@now/static" },
-    { "src": "examples/tests", "use": "@now/static" }
+    { "src": "examples/tests/**/*", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/examples/index.html"},
+    { "src": "/(?<path>.*)", "dest": "/examples/$path"}
   ],
   "github": {
     "enabled": true
