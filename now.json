@@ -1,7 +1,7 @@
 {
   "version": 2,
   "public": false,
-  "alias": ["isinviewport.zdx.cat", "www.isinviewport.zdx.cat"],
+  "alias": ["isinviewport.mudit.xyz", "www.isinviewport.mudit.xyz"],
   "builds": [
     { "src": "examples/advanced-viewport.html", "use": "@now/static" },
     { "src": "examples/advanced-viewport.js", "use": "@now/static" },
