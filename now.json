@@ -21,6 +21,6 @@
     { "src": "/(?<path>.*)", "dest": "/examples/$path"}
   ],
   "github": {
-    "enabled": true
+    "enabled": false
   }
 }

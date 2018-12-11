@@ -1,5 +1,13 @@
 language: node_js
 node_js:
   - "node"
+before_script:
+  - npm install --no-save now
 script:
   npm run build
+deploy:
+  provider: script
+  script: npm run deploy && npm run prealias && npm run alias && npm run postalias
+  skip_cleanup: true
+  on:
+    branch: master
