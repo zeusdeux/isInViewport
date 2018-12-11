@@ -9,12 +9,7 @@
     "test": "gulp test",
     "build": "gulp",
     "clean": "gulp clean",
-    "prepublish": "gulp",
-    "deploy": "export URL_TO_ALIAS=$(now --no-clipboard -t $NOW_TOKEN)",
-    "prealias": "echo \"Aliasing -> $URL_TO_ALIAS\"",
-    "alias": "now alias -t $NOW_TOKEN $URL_TO_ALIAS isinviewport.mudit.xyz && now alias -t $NOW_TOKEN $URL_TO_ALIAS www.isinviewport.mudit.xyz",
-    "postalias": "unset URL_TO_ALIAS"
-
+    "deploy": "now && now alias"
   },
   "directories": {
     "example": "examples"

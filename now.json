@@ -1,4 +1,5 @@
 {
+  "name": "isInViewport",
   "version": 2,
   "public": false,
   "alias": ["isinviewport.mudit.xyz", "www.isinviewport.mudit.xyz"],
