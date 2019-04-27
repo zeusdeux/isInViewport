@@ -9,6 +9,8 @@ Did you say [demo](http://www.isinviewport.mudit.xyz) (inclusive of tests)?
 
 For a more performant alternative, please take a look at [observe-element-in-viewport](https://github.com/zeusdeux/observe-element-in-viewport) which uses the new `IntersectionObserver` API. Please keep in mind that you might have to ship a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) for `IntersectionObserver` depending on the browsers you support.
 
+**Note**: If you need this in a React application, please use the [use-is-in-viewport hook](https://github.com/zeusdeux/use-is-in-viewport).
+
 Installation
 ----------------
 #### Using in a module
